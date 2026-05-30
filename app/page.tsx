@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Hero from "./components/Hero";
 import CrossroadsHub from "./components/CrossroadsHub";
+import WhyPrecastExchange from "./components/WhyPrecastExchange";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
 
       <Hero />
       <CrossroadsHub />
+      <WhyPrecastExchange />
     </div>
   );
 }

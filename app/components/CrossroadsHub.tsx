@@ -60,7 +60,7 @@ export default function CrossroadsHub() {
       {/* Background Matrix Crosshair Visuals representing the "Crossroads" */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full relative z-10">
         
         {/* Header Text Block */}
         <div className="text-center mb-16">
