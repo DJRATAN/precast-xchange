@@ -14,7 +14,7 @@ export default function Navigation() {
           {/* Logo Container Wrapper: Keeps the image constrained and sharp */}
           <div className="relative w-[220px] h-[55px]">
             <Image 
-              src="/PRECAST EXCHANGE LOGO.png" 
+              src="/PRECAST EXCHANGE LOGO.PNG" 
               alt="Precast Xchange Logo"
               fill
               priority
