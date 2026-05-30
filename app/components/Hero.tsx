@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black">
+        <section className="relative w-full px-8 md:px-10 py-6 h-screen overflow-hidden flex items-center justify-center bg-black">
             {/* Background Image Container */}
             <div className="absolute inset-0 z-0">
                 <img

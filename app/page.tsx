@@ -1,10 +1,13 @@
 import Image from "next/image";
-import MarketplaceLayout from "./components/MarketplaceLayout";
- 
+import Hero from "./components/Hero";
+import HeroSection from "./components/HeroSection";
+
 export default function Home() {
   return (
     <div className="w-full bg-[#f8f9fa] min-h-screen font-sans">
-      <MarketplaceLayout />
+
+      <Hero />
+      <HeroSection />
     </div>
   );
 }

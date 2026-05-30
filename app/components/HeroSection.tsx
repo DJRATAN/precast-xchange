@@ -5,7 +5,7 @@ import { Play, Calendar, MapPin } from "lucide-react"
 
 export default function HeroSection() {
   return (
-    <section className="p-6">
+    <section className="w-full px-8 md:px-10 py-6">
       
  
 
