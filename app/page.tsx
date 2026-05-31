@@ -6,6 +6,7 @@ import LeftVideoAds from "./components/LeftVideoAds";
 import RightVideoAds from "./components/RightVideoAds";
 import AvenuesSection from "./components/AvenuesSection";
 import HeroSection from "./components/HeroSection";
+import FormsAndMoldsGrid from "./components/FormsAndMoldsGrid";
 
 export default function Home() {
   return (
@@ -22,11 +23,12 @@ export default function Home() {
         </aside>
 
         <main className="w-full bg-white border border-slate-200 shadow-sm min-h-screen">
-          <HeroSection/>
+          <HeroSection />
           <CrossroadsHub />
           <Hero />
           <WhyPrecastExchange />
           <AvenuesSection />
+          <FormsAndMoldsGrid />
         </main>
 
         {/* RIGHT SKYSCRAPER AD */}
