@@ -5,6 +5,7 @@ import WhyPrecastExchange from "./components/WhyPrecastExchange";
 import LeftVideoAds from "./components/LeftVideoAds";
 import RightVideoAds from "./components/RightVideoAds";
 import AvenuesSection from "./components/AvenuesSection";
+import HeroSection from "./components/HeroSection";
 
 export default function Home() {
   return (
@@ -21,8 +22,9 @@ export default function Home() {
         </aside>
 
         <main className="w-full bg-white border border-slate-200 shadow-sm min-h-screen">
-          <Hero />
+          <HeroSection/>
           <CrossroadsHub />
+          <Hero />
           <WhyPrecastExchange />
           <AvenuesSection />
         </main>

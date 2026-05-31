@@ -1,84 +1,107 @@
-import React from 'react'
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Play, Calendar, MapPin } from "lucide-react"
+'use client'
+
+import React, { useState, useEffect } from 'react'
 
 export default function HeroSection() {
+  const [currentText, setCurrentText] = useState(0)
+  
+  const taglines = [
+    {
+      line1: "BRIDGING",
+      line2: "PRECAST CONCRETE",
+      accent: "ENDLESSLY..."
+    },
+    {
+      line1: "MILES & MILES",
+      line2: "OF PRECAST",
+      accent: "TRENCHING"
+    },
+    {
+      line1: "THE MARVELS OF",
+      line2: "PRECAST",
+      accent: "CONCRETE"
+    }
+  ]
+
+  // Apple-style timed rotation loop (switches taglines every 4.5 seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentText((prev) => (prev + 1) % taglines.length)
+    }, 4500)
+    return () => clearInterval(timer)
+  }, [taglines.length])
+
   return (
-    <section className="w-full px-8 md:px-10 py-6">
+    <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-black">
       
- 
-
-      {/* CPI "ARTICLE OF THE DAY" HEADER SECTION STYLE */}
-      <div className="flex items-center gap-2 mb-4 border-b pb-2">
-        <span className="w-1 h-5 bg-[#004aad]" />
-        <h2 className="text-lg font-bold uppercase tracking-wide text-slate-800">
-          Featured Live Product Demo
-        </h2>
+      {/* 1. HIGH-PERFORMANCE BACKGROUND VIDEO LAYER */}
+      <div className="absolute inset-0 z-0 w-full h-full">
+        <video
+          src="/video/425942_Ocean Bridge Traffic Crossing_By_Joni_Visuals_Artlist_HD.mp4" // Place your high-quality mp4 asset in your public folder
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-50 scale-105"
+        />
+        {/* Deep, rich overlay to force contrast and readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
       </div>
 
-      {/* EXACT ASSET HERO GRID CONFIGURATION */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        {/* LEFT COLUMN: THE EXACT CONTAINER SPEC FOR VIDEO CARD MATCHING CPI IMAGERY AREA */}
-        <div className="lg:col-span-5 flex flex-col justify-between">
-          <Card className="overflow-hidden border border-slate-200 relative group shadow-sm flex-1">
-            
-            {/* The exact sizing/aspect viewport constraint */}
-            <div className="relative aspect-[4/3] w-full bg-slate-900 flex items-center justify-center overflow-hidden">
-              {/* Dynamic Video Placeholder Visuals */}
-              <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80')" }} />
+      {/* 2. KINETIC TEXT INTERACTIVE OVERLAY */}
+      <div className="relative z-10 text-center px-6 w-full max-w-5xl mx-auto">
+        <div className="flex flex-col items-center justify-center min-h-[320px]">
+          {taglines.map((tagline, index) => (
+            <div
+              key={index}
+              className={`absolute flex flex-col items-center transition-all duration-1000 ease-in-out transform ${
+                currentText === index
+                  ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
+                  : 'opacity-0 translate-y-8 scale-95 pointer-events-none'
+              }`}
+            >
+              {/* Line 1: Bold White Stark Text */}
+              <h1 className="text-white text-4xl md:text-6xl font-light uppercase tracking-wide drop-shadow-md">
+                {tagline.line1}
+              </h1>
               
-              {/* Color Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              {/* Line 2: Heavy Solid Dark Blue Core */}
+              <h2 className="text-white text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mt-2 drop-shadow-lg">
+                {tagline.line2}
+              </h2>
               
-              {/* Play Trigger UI Icon Overlay */}
-              <div className="absolute z-10 w-14 h-14 bg-[#1B79EE] hover:bg-[#004aad] rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 cursor-pointer text-white">
-                <Play className="w-6 h-6 fill-white ml-0.5" />
-              </div>
-              
-              {/* Live indicator or Category tag anchor top-left */}
-              <Badge className="absolute top-3 left-3 bg-[#004aad] text-white border-none rounded-none font-mono uppercase text-[10px]">
-                Featured Channel
-              </Badge>
-            </div>
-          </Card>
-        </div>
-
-        {/* RIGHT COLUMN: TECHNICAL SPECIFICATIONS & METADATA ENTRY TEXT BLOCK */}
-        <div className="lg:col-span-7 flex flex-col justify-between py-1">
-          <div>
-            <div className="flex gap-2 items-center text-xs text-slate-500 mb-2">
-              <span className="flex items-center gap-1 font-semibold text-[#1B79EE]">
-                <MapPin className="w-3 h-3" /> Central Europe
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <Calendar className="w-3 h-3" /> Updated Today
+              {/* Line 3: High-Impact Glowing Light Blue Accent */}
+              <span className="text-[#1B79EE] text-3xl md:text-5xl font-mono font-black uppercase tracking-widest mt-6 animate-pulse">
+                {tagline.accent}
               </span>
             </div>
-
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900 mb-3 hover:text-[#1B79EE] cursor-pointer transition">
-              Research Project PrecastX: High-Capacity Concrete Culvert Mold Testing & Verification Limits
-            </h1>
-            
-            <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              Since early 2026, automation consortia have engineered updated industrial tooling solutions tailored for automated wet-cast assemblies. The primary objective is optimization of deep-trench cable systems processing throughput up to structural integrity boundaries.
-            </p>
-          </div>
-
-          <div className="p-4 bg-slate-50 border border-slate-100 rounded-sm flex items-center justify-between">
-            <div>
-              <div className="text-xs text-slate-400 font-mono uppercase">Starting Configuration Bid</div>
-              <div className="text-xl font-black text-[#004aad]">$48,500 <span className="text-xs text-slate-500 font-normal">FOB</span></div>
-            </div>
-            <button className="bg-[#004aad] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 hover:bg-[#1B79EE] transition shadow-sm">
-              Inquire Technical Datasheet
-            </button>
-          </div>
+          ))}
         </div>
 
+        {/* 3. PREMIUM INTERACTIVE WORKFLOW CALL-TO-ACTIONS */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20">
+          <button className="bg-[#004aad] text-white font-black text-xs uppercase tracking-wider px-10 py-4 rounded-xl hover:bg-[#1B79EE] transition-all transform hover:scale-105 shadow-xl shadow-[#004aad]/30">
+            Explore Exchange Hub
+          </button>
+          <button className="backdrop-blur-md bg-white/5 border border-white/20 text-white text-xs font-black uppercase tracking-wider px-10 py-4 rounded-xl hover:bg-white hover:text-black transition-all">
+            Join Precast Ecosystem
+          </button>
+        </div>
       </div>
+
+      {/* 4. APPLE-STYLE PROGRESS DOTS INDICATOR */}
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
+        {taglines.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentText(index)}
+            className={`h-1.5 transition-all duration-500 rounded-full ${
+              currentText === index ? 'w-8 bg-[#1B79EE]' : 'w-2 bg-white/30 hover:bg-white/60'
+            }`}
+          />
+        ))}
+      </div>
+
     </section>
   )
 }
