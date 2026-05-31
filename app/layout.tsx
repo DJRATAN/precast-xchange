@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navigation from "./components/Navigation";
+import ExtraordinaryFooter from "./components/ExtraordinaryFooter";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
     >
       <Navigation />
       <body className="min-h-full flex flex-col">{children}</body>
+      <ExtraordinaryFooter />
     </html>
   );
 }
