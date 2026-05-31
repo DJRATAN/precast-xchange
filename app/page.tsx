@@ -4,6 +4,7 @@ import CrossroadsHub from "./components/CrossroadsHub";
 import WhyPrecastExchange from "./components/WhyPrecastExchange";
 import LeftVideoAds from "./components/LeftVideoAds";
 import RightVideoAds from "./components/RightVideoAds";
+import AvenuesSection from "./components/AvenuesSection";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <Hero />
           <CrossroadsHub />
           <WhyPrecastExchange />
+          <AvenuesSection />
         </main>
 
         {/* RIGHT SKYSCRAPER AD */}
