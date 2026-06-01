@@ -7,6 +7,7 @@ import RightVideoAds from "./components/RightVideoAds";
 import AvenuesSection from "./components/AvenuesSection";
 import HeroSection from "./components/HeroSection";
 import FormsAndMoldsGrid from "./components/FormsAndMoldsGrid";
+import CrossroadsFlippingHub from "./components/CrossroadsFlippingHub";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           <HeroSection />
           <CrossroadsHub />
           <Hero />
+          <CrossroadsFlippingHub/>
           <WhyPrecastExchange />
           <AvenuesSection />
           <FormsAndMoldsGrid />
