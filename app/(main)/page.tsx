@@ -1,13 +1,14 @@
 import Image from "next/image";
-import Hero from "./components/Hero";
-import CrossroadsHub from "./components/CrossroadsHub";
-import WhyPrecastExchange from "./components/WhyPrecastExchange";
-import LeftVideoAds from "./components/LeftVideoAds";
-import RightVideoAds from "./components/RightVideoAds";
-import AvenuesSection from "./components/AvenuesSection";
-import HeroSection from "./components/HeroSection";
-import FormsAndMoldsGrid from "./components/FormsAndMoldsGrid";
-import CrossroadsFlippingHub from "./components/CrossroadsFlippingHub";
+import Hero from "../components/Hero";
+import CrossroadsHub from "../components/CrossroadsHub";
+import WhyPrecastExchange from "../components/WhyPrecastExchange";
+import LeftVideoAds from "../components/LeftVideoAds";
+import RightVideoAds from "../components/RightVideoAds";
+import AvenuesSection from "../components/AvenuesSection";
+import HeroSection from "../components/HeroSection";
+import FormsAndMoldsGrid from "../components/FormsAndMoldsGrid";
+import CrossroadsFlippingHub from "../components/CrossroadsFlippingHub";
+import PegPortalDashboard from "../components/PegPortalDashboard";
 
 export default function Home() {
   return (
@@ -27,7 +28,8 @@ export default function Home() {
           <HeroSection />
           <CrossroadsHub />
           <Hero />
-          <CrossroadsFlippingHub/>
+          <CrossroadsFlippingHub />
+          {/* <PegPortalDashboard /> */}
           <WhyPrecastExchange />
           <AvenuesSection />
           <FormsAndMoldsGrid />

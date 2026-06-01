@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RefreshCw, ArrowRight } from "lucide-react"
-import KineticTransactionTicker from './KineticTransactionTicker';
+import { motion, AnimatePresence } from "framer-motion";
 
 interface TransactionCard {
   id: string;
@@ -15,9 +15,43 @@ interface TransactionCard {
   ctaText: string;
   isLightVariant?: boolean;
 }
+// --- Dynamic Typing Logic ---
+const words = [
+  "BARTER",
+  "BUY",
+  "SELL",
+  "TRADE IN",
+  "LEASE",
+  "RENT",
+  "BORROW",
+  "LOANERS",
+  "SURPLUS",
+  "REPAIRS",
+  "DONATE"
+];
+
 
 export default function CrossroadsFlippingHub() {
   const [flippedCard, setFlippedCard] = useState<string | null>(null)
+  const [index, setIndex] = useState(0)
+  const [subIndex, setSubIndex] = useState(0)
+  const [reverse, setReverse] = useState(false)
+
+  useEffect(() => {
+    if (subIndex === words[index].length + 1 && !reverse) {
+      const timeout = setTimeout(() => setReverse(true), 1500)
+      return () => clearTimeout(timeout)
+    }
+    if (subIndex === 0 && reverse) {
+      setReverse(false)
+      setIndex((prev) => (prev + 1) % words.length)
+      return
+    }
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1))
+    }, reverse ? 40 : 80)
+    return () => clearTimeout(timeout)
+  }, [subIndex, index, reverse])
 
   const hubs: TransactionCard[] = [
     {
@@ -72,11 +106,44 @@ export default function CrossroadsFlippingHub() {
         <div className="text-left mb-12 border-b-2 border-[#004aad] pb-4">
           <h2 className="text-3xl font-black text-[#004aad] tracking-tight uppercase rounded-none">
             COMMERCIAL <span className="text-[#1B79EE]">CROSSROADS HUB</span>
-          </h2> 
+          </h2>
         </div>
-        <KineticTransactionTicker />
+        <div className="max-w-7xl w-full pb-4 rounded-none text-center md:text-left">
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter flex flex-wrap items-center justify-center md:justify-start gap-x-6 leading-none select-none rounded-none">
+
+            {/* STATIC: PORTAL (Solid Dark Blue) */}
+            <span className="text-[#004aad] uppercase rounded-none">
+              FOR
+            </span>
+
+            {/* DYNAMIC: CLEAN OUTLINE (Light Blue) */}
+            <div className="relative inline-flex items-center rounded-none">
+              <span
+                className="uppercase rounded-none"
+                style={{
+                  // FIX: paint-order prevents the "A" lines from crossing/mismatching
+                  paintOrder: "stroke fill",
+                  WebkitTextStroke: "4px #1B79EE",
+                  color: "white", // Using white fill instead of transparent fixes the "A" overlap
+                  textShadow: "none"
+                }}
+              >
+                {words[index].substring(0, subIndex)}
+              </span>
+
+              {/* The Solid Light Blue Dot */}
+              <span className="text-[#1B79EE] rounded-none">.</span>
+
+              {/* Sharp Industrial Cursor (Dark Blue) */}
+              <span className="inline-block w-3 h-14 md:h-20 lg:h-24 bg-[#004aad] ml-4 animate-pulse rounded-none" />
+            </div>
+
+          </h1>
+
+        </div>
         {/* Structural Grid Layout - Bound exactly to strict 290px dimensions */}
-        <div className="flex flex-wrap justify-start items-start gap-6 [perspective:1200px]">
+        <div className="flex flex-wrap justify-evenly items-start gap-6 [perspective:1200px]">
           {hubs.map((card) => {
             const isFlipped = flippedCard === card.id
 

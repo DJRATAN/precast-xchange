@@ -102,14 +102,14 @@ export default function Navigation() {
           <div className="flex items-center gap-2 rounded-none">
             {/* Login Action Toggle */}
             <Link href={'/login'}>
-              <button className="border-2 border-[#004aad] text-[#004aad] hover:bg-[#004aad] hover:text-white text-[10px] font-black uppercase tracking-widest py-2.5 px-4 flex items-center gap-2 transition-all rounded-none bg-transparent outline-none">
+              <button className="border-2 border-[#004aad] text-[#004aad] hover:bg-[#004aad] hover:text-white text-[10px] font-black uppercase tracking-widest py-2.5 px-4 flex items-center gap-2 transition-all rounded-none bg-transparent outline-none cursor-pointer">
                 <LogIn className="w-3.5 h-3.5" />
                 <span>Login</span>
               </button></Link>
 
             {/* Registration Action Toggle */}
             {/* <Link href={'register'}>
-              <button className="bg-[#1B79EE] border-2 border-[#1B79EE] text-white hover:bg-[#004aad] hover:border-[#004aad] text-[10px] font-black uppercase tracking-widest py-2.5 px-4 flex items-center gap-2 transition-all rounded-none outline-none">
+              <button className="bg-[#1B79EE] border-2 border-[#1B79EE] text-white hover:bg-[#004aad] hover:border-[#004aad] text-[10px] font-black uppercase tracking-widest py-2.5 cursor-pointer px-4 flex items-center gap-2 transition-all rounded-none outline-none">
                 <UserPlus className="w-3.5 h-3.5" />
                 <span>Register</span>
               </button></Link> */}

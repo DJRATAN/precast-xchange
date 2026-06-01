@@ -32,9 +32,8 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <Navigation />
-      <body className="min-h-full flex flex-col">{children}</body>
-      <ExtraordinaryFooter />
+      <body className="min-h-full flex flex-col">{children}
+      </body>
     </html>
   );
 }
