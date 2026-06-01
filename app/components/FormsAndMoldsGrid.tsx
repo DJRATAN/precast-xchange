@@ -90,9 +90,6 @@ export default function FormsMoldsVideoGrid() {
           <h2 className="text-3xl font-black text-[#004aad] tracking-tight uppercase rounded-none">
             FORMS & MOLDS <span className="text-[#1B79EE]">CENTRAL HUB</span>
           </h2>
-          {/* <p className="text-xs font-bold text-[#1B79EE] uppercase tracking-widest mt-1">
-            Global Video Ledger • Native Autoplay Streaming Loop
-          </p> */}
         </div>
 
         {/* Standardized 290px Card Grid Array */}
@@ -101,16 +98,17 @@ export default function FormsMoldsVideoGrid() {
             /* Card Bounds: Exactly 290px x 580px, completely flat corners (0px) */
             <div
               key={card.id}
-              className={`w-[290px] h-[580px] rounded-none border-2 flex flex-col justify-between overflow-hidden transition-all duration-300 ${card.isLightVariant
-                  ? 'bg-white border-[#1B79EE]/40 hover:border-[#1B79EE] shadow-sm'
-                  : 'bg-white border-[#004aad] hover:shadow-md'
-                }`}
+              className={`w-[290px] h-[580px] rounded-none border-2 flex flex-col justify-between overflow-hidden transition-all duration-300 group ${
+                card.isLightVariant
+                  ? 'bg-white border-[#1B79EE]/40 hover:bg-[#1B79EE] hover:border-[#1B79EE]'
+                  : 'bg-white border-[#004aad] hover:bg-[#004aad] hover:border-[#004aad]'
+              }`}
             >
 
               {/* Top Block */}
               <div>
                 {/* Native HTML5 High-Performance Video Player: Exactly 286px x 256px */}
-                <div className="relative w-[286px] h-[256px] mx-auto bg-black overflow-hidden rounded-none">
+                <div className="relative w-[286px] h-[256px] mx-auto bg-black overflow-hidden rounded-none mt-[2px]">
                   <video
                     src={card.videoSrc}
                     autoPlay
@@ -120,35 +118,45 @@ export default function FormsMoldsVideoGrid() {
                     className="w-full h-full object-cover rounded-none"
                   />
                   {/* Decorative Color Stripe on top edge of frame */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
-                    }`} />
+                  <div className={`absolute top-0 left-0 right-0 h-1 ${
+                    card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
+                  }`} />
                 </div>
 
                 {/* Information Content Area */}
                 <div className="p-4 space-y-3 text-left">
-                  <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none ${card.isLightVariant
-                      ? 'border-[#1B79EE] text-[#1B79EE]'
-                      : 'border-[#004aad] text-[#004aad]'
-                    }`}>
+                  {/* Badge Component */}
+                  <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none transition-colors duration-300 ${
+                    card.isLightVariant
+                      ? 'border-[#1B79EE] text-[#1B79EE] group-hover:border-white group-hover:text-white'
+                      : 'border-[#004aad] text-[#004aad] group-hover:border-white group-hover:text-white'
+                  }`}>
                     {card.badge}
                   </div>
 
-                  <h3 className="text-base font-black text-[#004aad] tracking-tight leading-tight uppercase rounded-none">
+                  {/* Title Header */}
+                  <h3 className={`text-base font-black tracking-tight leading-tight uppercase rounded-none transition-colors duration-300 ${
+                    card.isLightVariant ? 'text-[#004aad] group-hover:text-white' : 'text-[#004aad] group-hover:text-white'
+                  }`}>
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-slate-700 font-light leading-relaxed rounded-none">
+                  {/* Description Paragraph */}
+                  <p className={`text-xs font-light leading-relaxed rounded-none transition-colors duration-300 ${
+                    card.isLightVariant ? 'text-slate-700 group-hover:text-white/90' : 'text-slate-700 group-hover:text-white/90'
+                  }`}>
                     {card.description}
                   </p>
                 </div>
               </div>
 
               {/* Action Interactive Layer */}
-              <div className="p-4 bg-slate-50 border-t border-slate-100 rounded-none">
-                <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${card.isLightVariant
-                    ? 'bg-[#1B79EE] hover:bg-[#004aad]'
-                    : 'bg-[#004aad] hover:bg-[#1B79EE]'
-                  }`}>
+              <div className="p-4 bg-slate-50 border-t border-slate-100 rounded-none transition-colors duration-300 group-hover:bg-transparent group-hover:border-white/10">
+                <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${
+                  card.isLightVariant
+                    ? 'bg-[#1B79EE] group-hover:bg-white group-hover:text-[#1B79EE]'
+                    : 'bg-[#004aad] group-hover:bg-white group-hover:text-[#004aad]'
+                }`}>
                   {card.ctaText}
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>

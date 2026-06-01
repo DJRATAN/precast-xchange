@@ -1,0 +1,183 @@
+'use client'
+
+import React, { useState } from 'react'
+import { RefreshCw, ArrowRight } from "lucide-react"
+
+interface TransactionCard {
+  id: string;
+  title: string;
+  badge: string;
+  frontDesc: string;
+  videoSrc: string;
+  backTitle: string;
+  backDesc: string;
+  ctaText: string;
+  isLightVariant?: boolean;
+}
+
+export default function CrossroadsFlippingHub() {
+  const [flippedCard, setFlippedCard] = useState<string | null>(null)
+
+  const hubs: TransactionCard[] = [
+    {
+      id: 'acquisition',
+      title: "BUY • SELL • SURPLUS",
+      badge: "Direct Asset Exchange",
+      frontDesc: "Liquidate active inventory channels or acquire zero-lead-time structural form overstock immediately.",
+      videoSrc: "/video/mega mold 30-48 red.mp4",
+      backTitle: "Capital Exchange Terminal",
+      backDesc: "Deploy capital routes directly for immediate outright structural acquisition or list overstock manufacturing assets onto the global precast index to recover yard square-footage instantly.",
+      ctaText: "Execute Procurement",
+    },
+    {
+      id: 'barter',
+      title: "BARTER • TRADE IN",
+      badge: "Asset Liquidity Pipeline",
+      frontDesc: "Direct asset-for-asset trading mechanics. Swap unutilized elements for immediate forming patterns.",
+      videoSrc: "/video/trade-portal-loop.mp4",
+      backTitle: "Barter Matching Engine",
+      backDesc: "Trade unutilized steel formwork profiles, aging wetcast tooling channels, or structural box culvert templates straight across for operational assets matching your current project specification matrix.",
+      ctaText: "Initiate Asset Swap",
+      isLightVariant: true,
+    },
+    {
+      id: 'financing',
+      title: "LEASE • RENT • BORROW • LOANERS",
+      badge: "Utilization & Fleet Finance",
+      frontDesc: "Access variable runtime logistics, emergency replacement loaners, and operational leasing structures.",
+      videoSrc: "/video/used-molds-loop.mp4",
+      backTitle: "Fleet Deployment Desk",
+      backDesc: "Maximize asset utility by routing unused inventory arrays into short-term rental channels, setting up structural seasonal leases, or requesting short-term backup machinery forms during peak pours.",
+      ctaText: "Lock Deployment Rates",
+    },
+    {
+      id: 'sustainability',
+      title: "REPAIRS • DONATE",
+      badge: "Asset Lifecycle Operations",
+      frontDesc: "Recondition worn structural forming setups or route mis-pours clean into recycling networks.",
+      videoSrc: "/video/mold-repair-loop.mp4",
+      backTitle: "Refurbishment & Recovery",
+      backDesc: "Connect straight with structural welding specialists to machine, blast, and patch forms to tolerance. Alternatively, route damaged forming steel arrays or surplus material into green credit setups.",
+      ctaText: "Initialize Recovery Link",
+      isLightVariant: true,
+    }
+  ]
+
+  return (
+    <section className="w-full py-20 px-4 md:px-10 bg-white relative">
+      <div className="w-full mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-left mb-12 border-b-2 border-[#004aad] pb-4">
+          <h2 className="text-3xl font-black text-[#004aad] tracking-tight uppercase rounded-none">
+            COMMERCIAL <span className="text-[#1B79EE]">CROSSROADS HUB</span>
+          </h2>
+          <p className="text-xs font-bold text-[#1B79EE] uppercase tracking-widest mt-1">
+            12 Transaction Vectors • 3D Flashing Perspective Matrix
+          </p>
+        </div>
+
+        {/* Structural Grid Layout - Bound exactly to strict 290px dimensions */}
+        <div className="flex flex-wrap justify-start items-start gap-6 [perspective:1200px]">
+          {hubs.map((card) => {
+            const isFlipped = flippedCard === card.id
+
+            return (
+              <div 
+                key={card.id}
+                className="w-[290px] h-[580px] cursor-pointer relative rounded-none"
+                onMouseEnter={() => setFlippedCard(card.id)}
+                onMouseLeave={() => setFlippedCard(null)}
+                onClick={() => setFlippedCard(isFlipped ? null : card.id)}
+              >
+                {/* Neon Flashing Aura Base Layer */}
+                <div className={`absolute -inset-0.5 rounded-none transition-opacity duration-500 blur-sm opacity-30 group-hover:opacity-100 ${
+                  card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
+                }`} />
+                
+                {/* 3D Flipping Core Framework */}
+                <div className={`w-full h-full bg-white transition-transform duration-700 [transform-style:preserve-3d] relative rounded-none ${
+                  isFlipped ? '[transform:rotateY(180deg)]' : ''
+                }`}>
+                  
+                  {/* FRONT SIDE PANEL */}
+                  <div className={`absolute inset-0 w-full h-full border-2 [backface-visibility:hidden] z-20 flex flex-col justify-between bg-white rounded-none ${
+                    card.isLightVariant ? 'border-[#1B79EE]' : 'border-[#004aad]'
+                  }`}>
+                    <div>
+                      {/* Top Video Canvas Layer: Strictly 286px x 256px */}
+                      <div className="relative w-[286px] h-[256px] mx-auto bg-black overflow-hidden rounded-none">
+                        <video
+                          src={card.videoSrc}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover rounded-none"
+                        />
+                        {/* Auto Flip Data Signal Overlay Indicator */}
+                        <div className="absolute top-2 right-2 bg-black/70 px-2 py-0.5 flex items-center gap-1 text-[8px] font-mono text-white rounded-none border border-white/20">
+                          <RefreshCw className="w-2 h-2 animate-spin-[reverse]" /> ACTIVE
+                        </div>
+                      </div>
+
+                      {/* Content Section */}
+                      <div className="p-4 space-y-3 text-left rounded-none">
+                        <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none ${
+                          card.isLightVariant ? 'border-[#1B79EE] text-[#1B79EE]' : 'border-[#004aad] text-[#004aad]'
+                        }`}>
+                          {card.badge}
+                        </div>
+                        <h3 className="text-base font-black text-[#004aad] tracking-tight uppercase leading-tight rounded-none">
+                          {card.title}
+                        </h3>
+                        <p className="text-xs text-slate-700 font-light leading-relaxed rounded-none">
+                          {card.frontDesc}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Bottom Utility Indicator */}
+                    <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-[#1B79EE] text-[9px] font-black uppercase tracking-widest rounded-none">
+                      Reveal Parameters <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+
+                  {/* BACK SIDE PANEL (ROTATED 180 DEG) */}
+                  <div className={`absolute inset-0 w-full h-full p-6 border-2 [backface-visibility:hidden] [transform:rotateY(180deg)] z-10 flex flex-col justify-between bg-slate-950 text-white rounded-none ${
+                    card.isLightVariant ? 'border-[#1B79EE]' : 'border-[#004aad]'
+                  }`}>
+                    <div className="space-y-4 text-left rounded-none">
+                      <div className="text-[9px] font-black text-[#1B79EE] tracking-widest uppercase border border-[#1B79EE] px-2.5 py-0.5 inline-block rounded-none">
+                        System Configuration
+                      </div>
+                      <h4 className="text-white font-black text-lg tracking-tight uppercase rounded-none">
+                        {card.backTitle}
+                      </h4>
+                      <p className="text-slate-300 text-xs leading-relaxed font-light rounded-none">
+                        {card.backDesc}
+                      </p>
+                    </div>
+
+                    {/* Industrial Activation Interactive Row */}
+                    <div className="space-y-3 rounded-none">
+                      <div className={`h-0.5 w-full ${card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'}`} />
+                      <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${
+                        card.isLightVariant ? 'bg-[#1B79EE] hover:bg-[#004aad]' : 'bg-[#004aad] hover:bg-[#1B79EE]'
+                      }`}>
+                        {card.ctaText}
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+      </div>
+    </section>
+  )
+}

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, MouseEvent } from 'react'
+import React from 'react'
 import { Box, PenTool, Layers, Factory, BookOpen } from 'lucide-react'
 
 interface AvenueItem {
@@ -11,29 +11,6 @@ interface AvenueItem {
 }
 
 export default function AvenuesSection() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [rotateX, setRotateX] = useState(0)
-  const [rotateY, setRotateY] = useState(0)
-
-  // Advanced Mouse Tracking for the 3D Apple Tilt & Glow Effect
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>, index: number) => {
-    setHoveredIndex(index)
-    const card = e.currentTarget
-    const box = card.getBoundingClientRect()
-    const x = e.clientX - box.left - box.width / 2
-    const y = e.clientY - box.top - box.height / 2
-    
-    // Limits the tilt intensity to keep it elegant and subtle
-    setRotateX(-y / 12)
-    setRotateY(x / 12)
-  }
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null)
-    setRotateX(0)
-    setRotateY(0)
-  }
-
   const avenues: AvenueItem[] = [
     {
       id: 1,
@@ -71,66 +48,48 @@ export default function AvenuesSection() {
     <section className="w-full py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Title Block */}
+        {/* Section Header Block */}
         <div className="flex flex-col items-center mb-16 space-y-2">
-          <h2 className="text-4xl font-black text-[#004aad] uppercase tracking-widest text-center">
+          <h2 className="text-4xl font-black text-[#004aad] uppercase tracking-widest text-center rounded-none">
             Avenues
           </h2>
-          <div className="w-12 h-1 bg-[#1B79EE]" />
+          <div className="w-12 h-1 bg-[#1B79EE] rounded-none" />
         </div>
 
-        {/* 3D Perspective Grid Wrap */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 [perspective:1200px]">
+        {/* Static Asymmetric Grid Layout - 0px Corners everywhere */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
           {avenues.map((item, index) => {
             const isBottomRow = index >= 3
-            const isCurrentHovered = hoveredIndex === index
 
             return (
               <div
                 key={item.id}
-                onMouseMove={(e) => handleMouseMove(e, index)}
-                onMouseLeave={handleMouseLeave}
-                style={{
-                  transform: isCurrentHovered 
-                    ? `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)` 
-                    : 'rotateX(0deg) rotateY(0deg) scale(1)',
-                  transition: isCurrentHovered ? 'none' : 'all 0.5s ease-out'
-                }}
-                className={`relative group rounded-xl bg-[#004aad] p-8 border border-[#004aad] overflow-hidden shadow-md [transform-style:preserve-3d] ${
+                className={`relative bg-[#004aad] p-8 border-2 border-[#004aad] rounded-none overflow-hidden transition-colors duration-200 ${
                   isBottomRow ? 'md:col-span-3' : 'md:col-span-2'
-                } ${isCurrentHovered ? 'shadow-[0_25px_50px_-12px_rgba(0,74,173,0.35)]' : ''}`}
+                } hover:border-[#1B79EE]`}
               >
-                {/* 1. APPLE GLOW: Immersive inner radial gradient moving to Light Blue on hover */}
-                <div 
-                  className="absolute inset-0 bg-radial from-[#1B79EE]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" 
-                  style={{ transform: 'translateZ(1px)' }}
-                />
-
-                {/* Content Container (Forced above the background effects) */}
-                <div className="relative z-10 flex flex-col h-full justify-between pointer-events-none">
+                {/* Content Container (Static and Flat) */}
+                <div className="relative z-10 flex flex-col h-full justify-between rounded-none">
                   <div>
-                    {/* Icon Housing - Scale up on hover */}
-                    <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#1B79EE]/50 transition-all duration-300">
+                    {/* Flat Vector Icon Base Housing */}
+                    <div className="w-6 h-6 flex items-center justify-center mb-6 rounded-none">
                       {item.icon}
                     </div>
 
-                    {/* Title with extra tracked space */}
-                    <h3 className="text-xl font-black tracking-wider text-white mb-4 uppercase group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-black tracking-wider text-white mb-4 uppercase rounded-none">
                       {item.title}
                     </h3>
                     
-                    {/* Separation Line brightening up dynamically */}
-                    <div className="w-full h-px bg-white/20 mb-4 group-hover:bg-[#1B79EE]/60 transition-colors duration-300" />
+                    {/* Clean Linear Accent Partition Line */}
+                    <div className="w-full h-px bg-white/20 mb-4 rounded-none group-hover:bg-[#1B79EE]" />
                   </div>
 
-                  {/* High Readability Content Text */}
-                  <p className="text-white/80 text-sm leading-relaxed font-light font-sans max-w-xl group-hover:text-white transition-colors duration-300">
+                  {/* High Contrast Technical Typography */}
+                  <p className="text-white/90 text-sm leading-relaxed font-light font-sans max-w-xl rounded-none">
                     {item.description}
                   </p>
                 </div>
 
-                {/* 2. CHROME BORDER: Outer perimeter halo accent glowing Light Blue */}
-                <div className="absolute inset-0 border border-transparent group-hover:border-[#1B79EE]/50 rounded-xl pointer-events-none transition-colors duration-500" />
               </div>
             )
           })}
