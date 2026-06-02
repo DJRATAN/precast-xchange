@@ -2,13 +2,14 @@
 
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image';
 
 interface OperationCard {
   id: string;
   title: string;
   badge: string;
   description: string;
-  videoSrc: string;
+  imageSrc: string;
   ctaText: string;
   isLightVariant?: boolean;
 }
@@ -20,7 +21,7 @@ export default function FormsMoldsVideoGrid() {
       title: "NEW MOLDS & FORMS",
       badge: "Procurement",
       description: "Deploy precision-engineered modern wetcast profiles, deep structural steel jackets, and high-tolerance modular infrastructure castings built for heavy automation.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/precast-mold-01 (10).jpeg",
       ctaText: "Browse Factory Catalog"
     },
     {
@@ -28,7 +29,7 @@ export default function FormsMoldsVideoGrid() {
       title: "PRE-OWNED ASSETS",
       badge: "Secondary Market",
       description: "Sourcing verified pre-owned casting inventories. Acquire structurally integral, factory-inspected steel molds and casting tables at optimized cost tiers.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (2).jpeg",
       ctaText: "Inspect Secondary Ledger",
     },
     {
@@ -36,7 +37,7 @@ export default function FormsMoldsVideoGrid() {
       title: "MAINTENANCE & REPAIRS",
       badge: "Refurbishment",
       description: "Connect with certified fabrication specialists to machine, clean, repair, and recalibrate worn steel formwork back to original structural spec limits.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (2).JPG",
       ctaText: "Schedule Engineering Audit"
     },
     {
@@ -44,7 +45,7 @@ export default function FormsMoldsVideoGrid() {
       title: "ASSET TRADE PORTAL",
       badge: "Liquidity Exchange",
       description: "Direct asset-for-asset trading infrastructure. Swap unutilized steel panels, box culvert configurations, or trench systems for active project formwork templates.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (3).JPG",
       ctaText: "Initiate Trade Inquiry",
     },
     {
@@ -52,7 +53,7 @@ export default function FormsMoldsVideoGrid() {
       title: "SURPLUS INVENTORY",
       badge: "Overstock Liquidation",
       description: "Immediate acquisition of liquidated manufacturer overstock. Zero-lead-time structural form assemblies available directly for immediate shipment pipelines.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (4).JPG",
       ctaText: "Acquire Liquidation Lots"
     },
     {
@@ -60,7 +61,7 @@ export default function FormsMoldsVideoGrid() {
       title: "MATERIAL DONATE PATH",
       badge: "Sustainability Loop",
       description: "Route decommissioned casting frameworks, overstock mix materials, or retired forming arrays directly into secondary educational or recycling pipelines.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (6).jpg",
       ctaText: "Route Donation Package",
     },
     {
@@ -68,7 +69,7 @@ export default function FormsMoldsVideoGrid() {
       title: "TECHNICAL CATALOGS",
       badge: "Documentation Index",
       description: "Access complete structural manufacturing specification libraries, exact dimensional clearance schemas, CAD design limits, and operational manuals.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (8).jpg",
       ctaText: "Download Data Blueprints"
     },
     {
@@ -76,7 +77,7 @@ export default function FormsMoldsVideoGrid() {
       title: "CONNECT WITH EXPERT",
       badge: "Technical Consultation",
       description: "Direct engineering terminal line. Interface with senior industrial precast specialists for custom structural mold configurations and dimensional blueprints.",
-      videoSrc: "/video/mega mold 30-48 red.mp4",
+      imageSrc: "/assets/mold form/catch-01 (9).jpg",
       ctaText: "Open Secure Consultation Pipeline"
     }
   ]
@@ -98,53 +99,54 @@ export default function FormsMoldsVideoGrid() {
             /* Card Bounds: Exactly 290px x 580px, completely flat corners (0px) */
             <div
               key={card.id}
-              className={`w-[290px] h-[580px] rounded-none border-2 flex flex-col justify-between overflow-hidden transition-all duration-300 group ${
-                card.isLightVariant
-                  ? 'bg-white border-[#1B79EE]/40 hover:bg-[#1B79EE] hover:border-[#1B79EE]'
-                  : 'bg-white border-[#004aad] hover:bg-[#004aad] hover:border-[#004aad]'
-              }`}
+              className={`w-[290px] h-[580px] rounded-none border-2 flex flex-col justify-between overflow-hidden transition-all duration-300 group ${card.isLightVariant
+                ? 'bg-white border-[#1B79EE]/40 hover:bg-[#1B79EE] hover:border-[#1B79EE]'
+                : 'bg-white border-[#004aad] hover:bg-[#004aad] hover:border-[#004aad]'
+                }`}
             >
 
               {/* Top Block */}
               <div>
                 {/* Native HTML5 High-Performance Video Player: Exactly 286px x 256px */}
                 <div className="relative w-[286px] h-[256px] mx-auto bg-black overflow-hidden rounded-none mt-[2px]">
-                  <video
-                    src={card.videoSrc}
+                  {/* <video
+                    src={card.imageSrc}
                     autoPlay
                     loop
                     muted
                     playsInline
                     className="w-full h-full object-cover rounded-none"
+                  /> */}
+                  <Image 
+                  src={card.imageSrc} 
+                  alt='mold image' 
+                  fill 
+                  className="w-full h-full object-cover rounded-none"
                   />
                   {/* Decorative Color Stripe on top edge of frame */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${
-                    card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
-                  }`} />
+                  <div className={`absolute top-0 left-0 right-0 h-1 ${card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
+                    }`} />
                 </div>
 
                 {/* Information Content Area */}
                 <div className="p-4 space-y-3 text-left">
                   {/* Badge Component */}
-                  <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none transition-colors duration-300 ${
-                    card.isLightVariant
-                      ? 'border-[#1B79EE] text-[#1B79EE] group-hover:border-white group-hover:text-white'
-                      : 'border-[#004aad] text-[#004aad] group-hover:border-white group-hover:text-white'
-                  }`}>
+                  <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none transition-colors duration-300 ${card.isLightVariant
+                    ? 'border-[#1B79EE] text-[#1B79EE] group-hover:border-white group-hover:text-white'
+                    : 'border-[#004aad] text-[#004aad] group-hover:border-white group-hover:text-white'
+                    }`}>
                     {card.badge}
                   </div>
 
                   {/* Title Header */}
-                  <h3 className={`text-base font-black tracking-tight leading-tight uppercase rounded-none transition-colors duration-300 ${
-                    card.isLightVariant ? 'text-[#004aad] group-hover:text-white' : 'text-[#004aad] group-hover:text-white'
-                  }`}>
+                  <h3 className={`text-base font-black tracking-tight leading-tight uppercase rounded-none transition-colors duration-300 ${card.isLightVariant ? 'text-[#004aad] group-hover:text-white' : 'text-[#004aad] group-hover:text-white'
+                    }`}>
                     {card.title}
                   </h3>
 
                   {/* Description Paragraph */}
-                  <p className={`text-xs font-light leading-relaxed rounded-none transition-colors duration-300 ${
-                    card.isLightVariant ? 'text-slate-700 group-hover:text-white/90' : 'text-slate-700 group-hover:text-white/90'
-                  }`}>
+                  <p className={`text-xs font-light leading-relaxed rounded-none transition-colors duration-300 ${card.isLightVariant ? 'text-slate-700 group-hover:text-white/90' : 'text-slate-700 group-hover:text-white/90'
+                    }`}>
                     {card.description}
                   </p>
                 </div>
@@ -152,11 +154,10 @@ export default function FormsMoldsVideoGrid() {
 
               {/* Action Interactive Layer */}
               <div className="p-4 bg-slate-50 border-t border-slate-100 rounded-none transition-colors duration-300 group-hover:bg-transparent group-hover:border-white/10">
-                <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${
-                  card.isLightVariant
-                    ? 'bg-[#1B79EE] group-hover:bg-white group-hover:text-[#1B79EE]'
-                    : 'bg-[#004aad] group-hover:bg-white group-hover:text-[#004aad]'
-                }`}>
+                <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${card.isLightVariant
+                  ? 'bg-[#1B79EE] group-hover:bg-white group-hover:text-[#1B79EE]'
+                  : 'bg-[#004aad] group-hover:bg-white group-hover:text-[#004aad]'
+                  }`}>
                   {card.ctaText}
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
