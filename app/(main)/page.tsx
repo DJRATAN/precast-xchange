@@ -9,6 +9,7 @@ import HeroSection from "../components/HeroSection";
 import FormsAndMoldsGrid from "../components/FormsAndMoldsGrid";
 import CrossroadsFlippingHub from "../components/CrossroadsFlippingHub";
 import PegPortalDashboard from "../components/PegPortalDashboard";
+import EquipmentCatalog from "../components/EquipmentCatalog";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
           <WhyPrecastExchange />
           <AvenuesSection />
           <FormsAndMoldsGrid />
+          <EquipmentCatalog />
         </main>
 
         {/* RIGHT SKYSCRAPER AD */}
