@@ -25,9 +25,9 @@ export default function Home() {
         </aside>
 
         <main className="w-full bg-white border border-slate-200 shadow-sm min-h-screen">
-          <HeroSection />
-          <CrossroadsHub />
           <Hero />
+          <CrossroadsHub />
+          <HeroSection />
           <CrossroadsFlippingHub />
           {/* <PegPortalDashboard /> */}
           <WhyPrecastExchange />
