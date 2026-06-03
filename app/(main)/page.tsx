@@ -11,6 +11,7 @@ import CrossroadsFlippingHub from "../components/CrossroadsFlippingHub";
 import PegPortalDashboard from "../components/PegPortalDashboard";
 import EquipmentCatalog from "../components/EquipmentCatalog";
 import RegionalPrecastersGrid from "../components/RegionalPrecastersGrid";
+import RegionalReadyMixGrid from "../components/RegionalReadyMixGrid";
 
 export default function Home() {
   return (
@@ -30,11 +31,11 @@ export default function Home() {
           <Hero />
           <CrossroadsHub />
           <HeroSection />
-          <RegionalPrecastersGrid /> 
+          <RegionalPrecastersGrid />
           <CrossroadsFlippingHub />
           {/* <PegPortalDashboard /> */}
           <WhyPrecastExchange />
-          <RegionalPrecastersGrid/>
+          <RegionalReadyMixGrid />
           <AvenuesSection />
           <FormsAndMoldsGrid />
           <EquipmentCatalog />
