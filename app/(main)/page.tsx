@@ -34,6 +34,7 @@ export default function Home() {
           <CrossroadsFlippingHub />
           {/* <PegPortalDashboard /> */}
           <WhyPrecastExchange />
+          <RegionalPrecastersGrid/>
           <AvenuesSection />
           <FormsAndMoldsGrid />
           <EquipmentCatalog />
