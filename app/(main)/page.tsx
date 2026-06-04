@@ -12,6 +12,7 @@ import EquipmentCatalog from "../components/EquipmentCatalog";
 import RegionalPrecastersGrid from "../components/RegionalPrecastersGrid";
 import RegionalReadyMixGrid from "../components/RegionalReadyMixGrid";
 import PrecastEquipmentGrid from "../components/PrecastEquipmentGrid";
+import PrecastCasting from "../components/PrecastCasting";
 
 export default function Home() {
   return (
@@ -28,7 +29,8 @@ export default function Home() {
           <HeroSection />
           <PrecastEquipmentGrid />
           <RegionalPrecastersGrid />
-          <CrossroadsFlippingHub /> 
+          <CrossroadsFlippingHub />
+          {/* <PrecastCasting /> */}
           <WhyPrecastExchange />
           <RegionalReadyMixGrid />
           <AvenuesSection />

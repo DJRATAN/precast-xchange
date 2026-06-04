@@ -38,15 +38,22 @@ export default function Hero() {
     }, [subIndex, index, reverse])
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-white rounded-none border-b-4 border-[#004aad]">
+        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center   rounded-none border-b-4 border-[#004aad]">
             
-            {/* Background Image Layer: Balanced opacity over white to maintain clean legibility */}
+            {/* Background Video Layer: Clean, Autoplay, Loop */}
             <div className="absolute inset-0 z-0 rounded-none">
-                <img
-                    src="/ecosystem-bg.png"
-                    alt="Ecosystem Ledger Structure"
-                    className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply rounded-none"
-                />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-[0.7] mix-blend-multiply rounded-none"
+                >
+                    <source 
+                        src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" 
+                        type="video/mp4" 
+                    />
+                </video>
             </div>
 
             {/* Background Industrial Grid Lines Overlay */}
@@ -58,7 +65,7 @@ export default function Hero() {
                     
                     {/* FIXED LINE: Locked absolutely in position (Dark Blue) */}
                     <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center justify-center rounded-none">
-                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase whitespace-nowrap leading-none text-[#004aad] rounded-none">
+                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase whitespace-nowrap leading-none text-white rounded-none">
                             IT IS A TOTAL
                         </h1>
                     </div>
@@ -66,11 +73,11 @@ export default function Hero() {
                     {/* ANIMATED LINE: Strictly 1 line, light blue fill with dark blue sharp outline over white */}
                     <div className="h-[60px] sm:h-[90px] md:h-[110px] lg:h-[130px] flex items-center justify-center rounded-none relative mt-4">
                         <span
-                            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
+                            className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
                             style={{
                                 paintOrder: "stroke fill",
                                 WebkitTextStroke: "3px #004aad", // Sharp Dark Blue Outline
-                                color: "#1B79EE",                // Light Blue Solid Fill
+                                color: "#ffffff",                // Light Blue Solid Fill
                                 textShadow: "none"
                             }}
                         >
@@ -78,11 +85,11 @@ export default function Hero() {
                         </span>
 
                         {/* Industrial Cursor (Dark Blue) */}
-                        <span className="inline-block w-2 md:w-3 h-8 sm:h-14 md:h-16 lg:h-20 bg-[#004aad] ml-4 animate-pulse rounded-none shrink-0" />
+                        <span className="inline-block w-2 md:w-3 h-8 sm:h-14 md:h-16 lg:h-20 bg-white ml-4 animate-pulse rounded-none shrink-0" />
                     </div>
                 </div>
 
-                <p className="mt-16 text-xs md:text-sm font-black tracking-[0.5em] text-[#1B79EE] uppercase rounded-none">
+                <p className="mt-16 text-xs md:text-sm font-black tracking-[0.5em] text-white uppercase rounded-none">
                     The Complete Precast Business Ecosystem
                 </p>
 
