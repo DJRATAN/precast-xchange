@@ -49,10 +49,10 @@ export default function Hero() {
                     muted
                     playsInline
                     preload="auto"
-                    poster="/video-placeholder-frame.jpg" 
+                    poster="/video-placeholder-frame.png" 
                     onCanPlayThrough={() => setIsVideoLoaded(true)}
                     className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${
-                        isVideoLoaded ? 'opacity-[0.7]' : 'opacity-0'
+                        isVideoLoaded ? 'opacity-[0.8]' : 'opacity-0'
                     }`}
                 >
                     <source 

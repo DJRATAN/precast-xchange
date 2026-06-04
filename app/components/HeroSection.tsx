@@ -83,7 +83,7 @@ export default function HeroSection() {
           <button className="bg-[#004aad] text-white font-black text-xs uppercase tracking-wider px-10 py-4 rounded-xl hover:bg-[#1B79EE] transition-all transform hover:scale-105 shadow-xl shadow-[#004aad]/30">
             Explore Exchange Hub
           </button>
-          <button className="backdrop-blur-md bg-white/5 border border-white/20 text-white text-xs font-black uppercase tracking-wider px-10 py-4 rounded-xl hover:bg-white hover:text-black transition-all">
+          <button className="backdrop-blur-md bg-white/5 border border-white/20 text-white text-xs font-black uppercase tracking-wider px-10 py-4 rounded-xl hover:bg-white hover:text-[#004aad] transition-all">
             Join Precast Ecosystem
           </button>
         </div>
