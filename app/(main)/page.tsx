@@ -30,7 +30,7 @@ export default function Home() {
           <PrecastEquipmentGrid />
           <RegionalPrecastersGrid />
           <CrossroadsFlippingHub />
-          {/* <PrecastCasting /> */}
+          <PrecastCasting />
           <WhyPrecastExchange />
           <RegionalReadyMixGrid />
           <AvenuesSection />

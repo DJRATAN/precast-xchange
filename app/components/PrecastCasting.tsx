@@ -115,7 +115,7 @@ export default function PrecastCasting() {
                         onClick={handleLoadMore}
                         className="group border-2 border-[#004aad] bg-[#004aad] text-white hover:bg-[#1B79EE] hover:border-[#1B79EE] text-xs font-black uppercase tracking-[0.2em] py-4 px-10 flex items-center justify-center gap-3 transition-all rounded-none outline-none cursor-pointer shadow-[4px_4px_0px_#1B79EE]"
                     >
-                        <span>Load More Ready-Mix Nodes</span>
+                        <span>Load More Precast Casting</span>
                         <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
                     </button>
                 </div>
