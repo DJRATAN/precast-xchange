@@ -29,9 +29,9 @@ export default function Navigation() {
       <div className="w-full px-8 md:px-10 py-4 flex flex-col md:flex-row justify-between items-center gap-4 rounded-none">
         <div className="flex items-center gap-4 rounded-none">
           {/* Logo */}
-          <div className="relative w-[130px] h-[60px] rounded-none">
+          <div className="relative w-[150px] h-[60px] rounded-none">
             <Image
-              src="/PRECAST EXCHANGE LOGO.PNG"
+              src="/pxg.png"
               alt="Precast Xchange"
               fill
               priority

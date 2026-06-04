@@ -38,7 +38,7 @@ export default function ExtraordinaryFooter() {
                             {/* BIG LOGO CONTAINER: White Background, Rounded, Increased Size */}
                             <div className="bg-white p-4 rounded-md shadow-sm w-full max-w-[280px] flex items-center justify-center">
                                 <Image
-                                    src="/PRECAST EXCHANGE LOGO.PNG"
+                                    src="/pxgfooter.png"
                                     alt="PrecastXchange"
                                     width={280} // Increased width for "Big Logo"
                                     height={100}
