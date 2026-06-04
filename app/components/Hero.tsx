@@ -20,6 +20,7 @@ export default function Hero() {
     const [index, setIndex] = useState(0)
     const [subIndex, setSubIndex] = useState(0)
     const [reverse, setReverse] = useState(false)
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
     useEffect(() => {
         if (subIndex === words[index].length + 1 && !reverse) {
@@ -38,19 +39,24 @@ export default function Hero() {
     }, [subIndex, index, reverse])
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center   rounded-none border-b-4 border-[#004aad]">
+        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-white rounded-none border-b-4 border-[#004aad]">
             
-            {/* Background Video Layer: Clean, Autoplay, Loop */}
-            <div className="absolute inset-0 z-0 rounded-none">
+            {/* Optimized Background Video Layer */}
+            <div className="absolute inset-0 z-0 rounded-none bg-white">
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-[0.7] mix-blend-multiply rounded-none"
+                    preload="auto"
+                    poster="/video-placeholder-frame.jpg" 
+                    onCanPlayThrough={() => setIsVideoLoaded(true)}
+                    className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${
+                        isVideoLoaded ? 'opacity-[0.7]' : 'opacity-0'
+                    }`}
                 >
                     <source 
-                        src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" 
+                        src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4"
                         type="video/mp4" 
                     />
                 </video>
@@ -63,29 +69,29 @@ export default function Hero() {
             <div className="relative z-20 text-center w-full max-w-7xl px-6 py-12 rounded-none">
                 <div className="flex flex-col items-center justify-center rounded-none">
                     
-                    {/* FIXED LINE: Locked absolutely in position (Dark Blue) */}
+                    {/* FIXED LINE */}
                     <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center justify-center rounded-none">
                         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase whitespace-nowrap leading-none text-white rounded-none">
                             IT IS A TOTAL
                         </h1>
                     </div>
 
-                    {/* ANIMATED LINE: Strictly 1 line, light blue fill with dark blue sharp outline over white */}
+                    {/* ANIMATED LINE */}
                     <div className="h-[60px] sm:h-[90px] md:h-[110px] lg:h-[130px] flex items-center justify-center rounded-none relative mt-4">
                         <span
-                            className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
+                            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
                             style={{
                                 paintOrder: "stroke fill",
-                                WebkitTextStroke: "3px #004aad", // Sharp Dark Blue Outline
-                                color: "#ffffff",                // Light Blue Solid Fill
+                                WebkitTextStroke: "3px #004aad",
+                                color: "#ffffff",
                                 textShadow: "none"
                             }}
                         >
                             {words[index].substring(0, subIndex)}
                         </span>
 
-                        {/* Industrial Cursor (Dark Blue) */}
-                        <span className="inline-block w-2 md:w-3 h-8 sm:h-14 md:h-16 lg:h-20 bg-white ml-4 animate-pulse rounded-none shrink-0" />
+                        {/* Industrial Cursor */}
+                        <span className="inline-block w-2 md:w-3 h-8 sm:h-14 md:h-16 lg:h-20 bg-[#ffffff] ml-4 animate-pulse rounded-none shrink-0" />
                     </div>
                 </div>
 
