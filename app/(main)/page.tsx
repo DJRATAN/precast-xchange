@@ -13,6 +13,7 @@ import RegionalPrecastersGrid from "../components/RegionalPrecastersGrid";
 import RegionalReadyMixGrid from "../components/RegionalReadyMixGrid";
 import PrecastEquipmentGrid from "../components/PrecastEquipmentGrid";
 import PrecastCasting from "../components/PrecastCasting";
+import TaglineHero from "../components/TaglineHero";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
           <CrossroadsFlippingHub />
           <PrecastCasting />
           <WhyPrecastExchange />
+          <TaglineHero />
           <RegionalReadyMixGrid />
           <AvenuesSection />
           <FormsAndMoldsGrid />
