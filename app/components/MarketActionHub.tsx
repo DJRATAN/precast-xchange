@@ -4,7 +4,7 @@ import React, { useState, ChangeEvent } from 'react'
 import { createBrowserClient } from '@supabase/auth-helpers-nextjs'
 import { Upload, ArrowRight, CheckCircle2, AlertCircle, X } from 'lucide-react'
 
-type IntentType = 'BUY' | 'SELL' | 'TRADE' | 'LOANERS' | 'REPAIRS' | 'DONATE' | 'MANUFACTURING';
+type IntentType = 'BARTER' | 'BUY' | 'SELL' | 'TRADE' | 'LOANERS' | 'REPAIRS' | 'DONATE' | 'MANUFACTURING';
 type PostType = 'POST' | 'REQUEST';
 
 export default function MarketActionHub() {
@@ -25,6 +25,7 @@ export default function MarketActionHub() {
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
   const intents: { id: IntentType; label: string }[] = [
+    { id: 'BARTER', label: 'BARTER' },
     { id: 'BUY', label: 'BUY' },
     { id: 'SELL', label: 'SELL' },
     { id: 'TRADE', label: 'TRADE' },
