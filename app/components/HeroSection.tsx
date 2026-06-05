@@ -37,7 +37,7 @@ export default function HeroSection() {
       {/* 1. HIGH-PERFORMANCE BACKGROUND VIDEO LAYER */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <video
-          src="/video/425942_Ocean Bridge Traffic Crossing_By_Joni_Visuals_Artlist_HD.mp4" // Place your high-quality mp4 asset in your public folder
+          src="/video/6029794_Lofoten Drone Ocean Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4" // Place your high-quality mp4 asset in your public folder
           autoPlay
           loop
           muted
