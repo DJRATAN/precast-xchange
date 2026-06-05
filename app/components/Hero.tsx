@@ -5,14 +5,15 @@ const words = [
     "BARTER",
     "BUY",
     "SELL",
-    "TRADE IN",
+    "TRADE",
     "LEASE",
     "RENT",
     "BORROW",
     "LOANERS",
     "SURPLUS",
     "REPAIRS",
-    "DONATE"
+    "DONATE",
+    "FIND"
 ];
 
 export default function Hero() {
