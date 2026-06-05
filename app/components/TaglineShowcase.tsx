@@ -22,18 +22,18 @@ export default function TaglineShowcase() {
       topMicroText: "STRUCTURAL SCALE INTEGRATION",
       mainPhrase: ["PRECAST TOWERING", "THE SKIES"]
     },
-    {
-      id: "TAG-02",
-      type: "STATIC_STACKED",
-      topMicroText: "FACILITY TRANSFORMATIONS • RE-ENGINEERED",
-      mainPhrase: ["STOP AND VISIT US ON KING STREET", "FOR A TOTAL TRANSFORMATION"]
-    },
-    {
-      id: "TAG-03",
-      type: "BADGE_ALIGNED",
-      topMicroText: "GLOBAL PLATFORM INFRASTRUCTURE",
-      mainPhrase: ["CONCRETE BRIDGING &", "CONNECTING ALL PRECASTERS"]
-    }
+    // {
+    //   id: "TAG-02",
+    //   type: "STATIC_STACKED",
+    //   topMicroText: "FACILITY TRANSFORMATIONS • RE-ENGINEERED",
+    //   mainPhrase: ["STOP AND VISIT US ON KING STREET", "FOR A TOTAL TRANSFORMATION"]
+    // },
+    // {
+    //   id: "TAG-03",
+    //   type: "BADGE_ALIGNED",
+    //   topMicroText: "GLOBAL PLATFORM INFRASTRUCTURE",
+    //   mainPhrase: ["CONCRETE BRIDGING &", "CONNECTING ALL PRECASTERS"]
+    // }
   ]
 
  
@@ -48,8 +48,8 @@ export default function TaglineShowcase() {
       <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
         <div className="absolute inset-0 z-0 bg-white rounded-none">
           <video autoPlay loop muted playsInline preload="auto" onCanPlayThrough={() => setIsVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${isVideoLoaded ? 'opacity-[0.12]' : 'opacity-0'}`}>
-            <source src="/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
+            className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none `}>
+            <source src="/video/77245_Transportation Landscape Earth World_By_Oliver_&_Tabea_Scholz_Artlist_HD.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE06_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE06_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none rounded-none" />
@@ -59,7 +59,7 @@ export default function TaglineShowcase() {
             {taglinesData[0].topMicroText}
           </div>
           <div className="flex flex-col gap-y-2 rounded-none">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-[#004aad] rounded-none">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-white rounded-none">
               {taglinesData[0].mainPhrase[0]}
             </h2>
             <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-[#1B79EE] rounded-none">
@@ -74,11 +74,11 @@ export default function TaglineShowcase() {
       {/* =========================================================================
           TAGLINE SECTION 02: KING STREET TRANSFORMATION (High-Density Blueprint Stack)
           ========================================================================= */}
-      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
-        <div className="absolute inset-0 z-0 bg-white rounded-none">
+      {/* <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
+        <div className="absolute inset-0 z-0   rounded-none">
           <video autoPlay loop muted playsInline preload="auto"
             className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply rounded-none">
-            <source src="/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
+            <source src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE04_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE04_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none rounded-none" />
@@ -102,17 +102,17 @@ export default function TaglineShowcase() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
       {/* =========================================================================
           TAGLINE SECTION 03: CONCRETE BRIDGING (Screenshot 2026-06-01 174051.png Alignment Archetype)
           ========================================================================= */}
-      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
+      {/* <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
         <div className="absolute inset-0 z-0 bg-white rounded-none">
           <video autoPlay loop muted playsInline preload="auto"
             className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply rounded-none">
-            <source src="/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
+            <source src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE06_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE06_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none rounded-none" />
@@ -135,7 +135,7 @@ export default function TaglineShowcase() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   )
