@@ -4,6 +4,7 @@ import ExtraordinaryFooter from '../components/ExtraordinaryFooter';
 import { cn } from '@/lib/utils';
 import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import { Metadata } from 'next';
+import Hero from '../components/Hero';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
@@ -23,26 +24,27 @@ export const metadata: Metadata = {
   },
   description: "Precast Xchange is a marketplace for total precast",
   icons: {
-    icon: "/favicon.svg",  
+    icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
 };
 
 export default function MainLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html
-            lang="en"
-            className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
-        >
-            <Navigation />
-            <body className="min-h-full flex flex-col">{children}</body>
-            <ExtraordinaryFooter />
-        </html>
-    );
+  return (
+    <html
+      lang="en"
+      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+    >
+      <Navigation />
+      <Hero />
+      <body className="min-h-full flex flex-col">{children}</body>
+      <ExtraordinaryFooter />
+    </html>
+  );
 }
 

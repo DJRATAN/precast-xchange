@@ -39,7 +39,7 @@ export default function Hero() {
     }, [subIndex, index, reverse])
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad]">
+        <section className="relative w-full min-h-screen px-8 overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad]">
 
             {/* Optimized Background Video Layer */}
             <div className="absolute inset-0 z-0 rounded-none bg-white">

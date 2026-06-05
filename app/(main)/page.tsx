@@ -73,6 +73,17 @@ export default function Home() {
       lineTwoDefaultColor: "darkBlue",
       lineTwoHighlightText: "PRECASTERS",
       lineTwoHighlightColor: "lightBlue"
+    },
+    {
+      topMicroText: "PRECAST ARCHITECTURAL SYSTEMS",
+      videoSrc: "/video/6584801_Aerial Cityscape Architectural Landmark South Korea Songdo_By_Yeonmedia_Artlist_HD.mp4",
+      ctaText: "Play Presentation Sequence",
+      lineOneText: "THE PRECAST ARCHITECTURE ",
+      lineOneDefaultColor: "darkBlue",
+      lineTwoText: "",
+      lineTwoDefaultColor: "darkBlue",
+      lineTwoHighlightText: "ANIMATION",
+      lineTwoHighlightColor: "lightBlue"
     }
   ]
   return (
@@ -84,7 +95,7 @@ export default function Home() {
         </aside>
 
         <main className="w-full bg-white border border-slate-200 shadow-sm min-h-screen">
-          <Hero />
+
           <CrossroadsHub />
           <HeroSection />
           <PrecastEquipmentGrid />
@@ -97,6 +108,7 @@ export default function Home() {
           <TaglineHero />
           {/* <TaglineShowcase /> */}
           <WhyPrecastExchange />
+          {/* <TaglineHeros {...customTaglines[3]} /> */}
           <RegionalReadyMixGrid />
           <AvenuesSection />
           <FormsAndMoldsGrid />
