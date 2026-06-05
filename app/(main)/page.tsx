@@ -18,7 +18,6 @@ import TaglineHero from "../components/TaglineHero";
 import { FullWidthShowcase } from "../components/FullWidthShowcase";
 import TaglineShowcase from "../components/TaglineShowcase";
 import TaglineSection from "../components/TaglineSection";
-import MarketActionHub from "../components/MarketActionHub";
 // Define the type locally here to resolve the error instantly
 interface TaglineProps {
   topMicroText: string;
