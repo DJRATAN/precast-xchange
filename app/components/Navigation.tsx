@@ -21,7 +21,15 @@ export default function Navigation() {
     { code: 'Caribbean', name: 'Caribbean' },
     { code: 'Europe', name: 'Europe' }
   ]
-
+  const sponsorImg = [
+    { href: '/MEGA FOUNDRIES.png', alt: 'mega logo' },
+    { href: '/pxg.png', alt: 'mega logo' },
+    { href: '/assets/footer_logo/peg.jpeg', alt: 'mega logo' },
+    { href: '/assets/footer_logo/precasteng.jpeg', alt: 'mega logo' },
+    { href: '/assets/footer_logo/totaltech.jpeg', alt: 'mega logo' },
+    { href: '/assets/footer_logo/pxchange.jpeg', alt: 'mega logo' },
+    { href: '/assets/footer_logo/trench-unlimited.jpeg', alt: 'mega logo' },
+  ]
   return (
     <header className="w-full border-b-2 border-[#004aad] bg-white relative rounded-none">
 
@@ -151,11 +159,11 @@ export default function Navigation() {
             Proudly Supporting & Sponsoring
           </span>
           <div className="flex items-center gap-4 rounded-none">
-            {[1, 2, 3, 4, 5, 6].map((idx) => (
-              <div key={idx} className="h-8 w-20 relative border border-[#004aad]/10 p-0.5 rounded-none">
+            {sponsorImg.map((idx, index) => (
+              <div key={index} className="h-8 w-20 relative border border-[#004aad]/10 p-0.5 rounded-none">
                 <Image
-                  src="/MEGA FOUNDRIES.png"
-                  alt="Sponsor Ledger Node"
+                  src={idx.href}
+                  alt={idx.alt}
                   fill
                   className="object-contain rounded-none"
                 />
