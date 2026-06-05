@@ -45,7 +45,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover opacity-50 scale-105"
         />
         {/* Deep, rich overlay to force contrast and readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
+        <div className="absolute inset-0" />
       </div>
 
       {/* 2. KINETIC TEXT INTERACTIVE OVERLAY */}

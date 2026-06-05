@@ -15,6 +15,7 @@ import PrecastEquipmentGrid from "../components/PrecastEquipmentGrid";
 import PrecastCasting from "../components/PrecastCasting";
 import TaglineHero from "../components/TaglineHero";
 import { FullWidthShowcase } from "../components/FullWidthShowcase";
+import TaglineShowcase from "../components/TaglineShowcase";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
           <CrossroadsFlippingHub />
           <PrecastCasting />
           {/* <FullWidthShowcase /> */}
+          {/* <TaglineShowcase /> */}
           <WhyPrecastExchange />
           <TaglineHero />
           <RegionalReadyMixGrid />
