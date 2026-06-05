@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 interface TaglineConfig {
   id: string;
-  type: 'DYNAMIC' | 'STATIC_STACKED' | 'BADGE_ALIGNED';
+  type: 'DYNAMIC' | 'STATIC_STACKED' | 'BADGE_ALIGNED' | 'ANIMATION';
   topMicroText: string;
   mainPhrase: string[];
 }
@@ -22,18 +22,24 @@ export default function TaglineShowcase() {
       topMicroText: "STRUCTURAL SCALE INTEGRATION",
       mainPhrase: ["PRECAST TOWERING", "THE SKIES"]
     },
-    // {
-    //   id: "TAG-02",
-    //   type: "STATIC_STACKED",
-    //   topMicroText: "FACILITY TRANSFORMATIONS • RE-ENGINEERED",
-    //   mainPhrase: ["STOP AND VISIT US ON KING STREET", "FOR A TOTAL TRANSFORMATION"]
-    // },
-    // {
-    //   id: "TAG-03",
-    //   type: "BADGE_ALIGNED",
-    //   topMicroText: "GLOBAL PLATFORM INFRASTRUCTURE",
-    //   mainPhrase: ["CONCRETE BRIDGING &", "CONNECTING ALL PRECASTERS"]
-    // }
+    {
+      id: "TAG-02",
+      type: "STATIC_STACKED",
+      topMicroText: "FACILITY TRANSFORMATIONS • RE-ENGINEERED",
+      mainPhrase: ["STOP AND VISIT US ON KING STREET", "FOR A TOTAL TRANSFORMATION"]
+    },
+    {
+      id: "TAG-03",
+      type: "BADGE_ALIGNED",
+      topMicroText: "GLOBAL PLATFORM INFRASTRUCTURE",
+      mainPhrase: ["CONCRETE BRIDGING &", "CONNECTING ALL PRECASTERS"]
+    },
+    {
+      id: "TAG-04",
+      type: "ANIMATION",
+      topMicroText: "PRECAST",
+      mainPhrase: ["THE PRECAST ARCHITECTURE",'ANIMATION']
+    }
   ]
 
  
@@ -74,25 +80,25 @@ export default function TaglineShowcase() {
       {/* =========================================================================
           TAGLINE SECTION 02: KING STREET TRANSFORMATION (High-Density Blueprint Stack)
           ========================================================================= */}
-      {/* <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
+      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
         <div className="absolute inset-0 z-0   rounded-none">
           <video autoPlay loop muted playsInline preload="auto"
-            className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply rounded-none">
+            className="w-full h-full object-cover   mix-blend-multiply rounded-none">
             <source src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE04_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE04_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none rounded-none" />
 
         <div className="relative z-20 text-left w-full max-w-7xl py-12 rounded-none">
-          <div className="text-[11px] font-mono font-bold text-[#1B79EE] uppercase tracking-[0.3em] mb-4 rounded-none block">
+          <div className="text-[11px] font-mono font-bold text-white uppercase tracking-[0.3em] mb-4 rounded-none block">
             {taglinesData[1].topMicroText}
           </div>
           <div className="space-y-4 rounded-none">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-none text-[#004aad] max-w-5xl rounded-none">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-none text-white max-w-5xl rounded-none">
               {taglinesData[1].mainPhrase[0]}
             </h2>
             <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-white rounded-none"
-                style={{ paintOrder: "stroke fill", WebkitTextStroke: "3px #004aad", color: "#1B79EE" }}>
+                style={{ paintOrder: "stroke fill", WebkitTextStroke: "3px #004aad", color: "#ffffff" }}>
               {taglinesData[1].mainPhrase[1]}
             </h2>
           </div>
@@ -102,16 +108,16 @@ export default function TaglineShowcase() {
             </button>
           </div>
         </div>
-      </section> */}
+      </section>
 
 
       {/* =========================================================================
           TAGLINE SECTION 03: CONCRETE BRIDGING (Screenshot 2026-06-01 174051.png Alignment Archetype)
           ========================================================================= */}
-      {/* <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
+      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
         <div className="absolute inset-0 z-0 bg-white rounded-none">
           <video autoPlay loop muted playsInline preload="auto"
-            className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply rounded-none">
+            className="w-full h-full object-cover   mix-blend-multiply rounded-none">
             <source src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4" type="video/mp4" />
           </video>
         </div>
@@ -135,7 +141,40 @@ export default function TaglineShowcase() {
             </button>
           </div>
         </div>
-      </section> */}
+      </section>
+
+      {/* =========================================================================
+          TAGLINE SECTION 04: CONCRETE BRIDGING (Screenshot 2026-06-01 174051.png Alignment Archetype)
+          ========================================================================= */}
+       <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad] px-8 md:px-16 lg:px-24">
+        <div className="absolute inset-0 z-0   rounded-none">
+          <video autoPlay loop muted playsInline preload="auto"
+            className="w-full h-full object-cover   mix-blend-multiply rounded-none">
+            <source src="/video/6584801_Aerial Cityscape Architectural Landmark South Korea Songdo_By_Yeonmedia_Artlist_HD.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE04_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE04_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none rounded-none" />
+
+        <div className="relative z-20 text-left w-full max-w-7xl py-12 rounded-none">
+          <div className="text-[11px] font-mono font-bold text-white uppercase tracking-[0.3em] mb-4 rounded-none block">
+            {taglinesData[3].topMicroText}
+          </div>
+          <div className="space-y-4 rounded-none">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-none text-white max-w-5xl rounded-none">
+              {taglinesData[3].mainPhrase[0]}
+            </h2>
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-white rounded-none"
+                style={{ paintOrder: "stroke fill", WebkitTextStroke: "3px #004aad", color: "#ffffff" }}>
+              {taglinesData[3].mainPhrase[1]}
+            </h2>
+          </div>
+          <div className="mt-12 flex flex-wrap gap-4 rounded-none">
+            <button className="bg-[#004aad] border-2 border-[#004aad] text-white px-8 py-4 text-xs font-black uppercase tracking-widest rounded-none outline-none shadow-[4px_4px_0px_#1B79EE]">
+              View Location Map
+            </button>
+          </div>
+        </div>
+      </section>
 
     </div>
   )

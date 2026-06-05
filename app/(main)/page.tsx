@@ -13,11 +13,68 @@ import RegionalPrecastersGrid from "../components/RegionalPrecastersGrid";
 import RegionalReadyMixGrid from "../components/RegionalReadyMixGrid";
 import PrecastEquipmentGrid from "../components/PrecastEquipmentGrid";
 import PrecastCasting from "../components/PrecastCasting";
+import TaglineHeros from "../components/TaglineHeros";
 import TaglineHero from "../components/TaglineHero";
 import { FullWidthShowcase } from "../components/FullWidthShowcase";
 import TaglineShowcase from "../components/TaglineShowcase";
-
+import TaglineSection from "../components/TaglineSection";
+// Define the type locally here to resolve the error instantly
+interface TaglineProps {
+  topMicroText: string;
+  videoSrc: string;
+  ctaText?: string;
+  // Line 1 breakdown configuration
+  lineOneText: string;
+  lineOneHighlightText?: string;
+  lineOneDefaultColor: 'darkBlue' | 'lightBlue' | 'white';
+  lineOneHighlightColor?: 'darkBlue' | 'lightBlue' | 'white';
+  // Line 2 breakdown configuration
+  lineTwoText: string;
+  lineTwoHighlightText?: string;
+  lineTwoDefaultColor: 'darkBlue' | 'lightBlue' | 'white';
+  lineTwoHighlightColor?: 'darkBlue' | 'lightBlue' | 'white';
+}
 export default function Home() {
+  const customTaglines: TaglineProps[] = [
+    {
+      topMicroText: "STRUCTURAL SCALE INTEGRATION",
+      videoSrc: "/video/77245_Transportation Landscape Earth World_By_Oliver_&_Tabea_Scholz_Artlist_HD.mp4",
+      ctaText: "Explore Projects",
+      // "PRECAST" is dark blue, "TOWERING THE SKIES" is light blue
+      lineOneText: "PRECAST ",
+      lineOneDefaultColor: "white",
+      lineOneHighlightText: "TOWERING",
+      lineOneHighlightColor: "lightBlue",
+      lineTwoText: "THE SKIES",
+      lineTwoDefaultColor: "lightBlue"
+    },
+    {
+      topMicroText: "FACILITY TRANSFORMATIONS • RE-ENGINEERED",
+      videoSrc: "/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4",
+      ctaText: "View Location Map",
+      // White text layout with dark blue accent
+      lineOneText: "STOP AND VISIT US ON KING STREET",
+      lineOneDefaultColor: "darkBlue",
+      lineTwoText: "FOR A TOTAL ",
+      lineTwoDefaultColor: "darkBlue",
+      lineTwoHighlightText: "TRANSFORMATION",
+      lineTwoHighlightColor: "lightBlue"
+    },
+    {
+      topMicroText: "GLOBAL PLATFORM INFRASTRUCTURE",
+      videoSrc: "/video/6584801_Aerial Cityscape Architectural Landmark South Korea Songdo_By_Yeonmedia_Artlist_HD.mp4",
+      ctaText: "Join Ecosystem Network",
+      // Classic layout: Dark Blue base with Light Blue focus words
+      lineOneText: "CONCRETE ",
+      lineOneDefaultColor: "darkBlue",
+      lineOneHighlightText: "BRIDGING &",
+      lineOneHighlightColor: "lightBlue",
+      lineTwoText: "CONNECTING ALL ",
+      lineTwoDefaultColor: "darkBlue",
+      lineTwoHighlightText: "PRECASTERS",
+      lineTwoHighlightColor: "lightBlue"
+    }
+  ]
   return (
     <div className="w-full bg-[#f8f9fa] min-h-screen font-sans">
       <div className="w-full mx-auto flex justify-center items-start gap-4 px-4">
@@ -31,13 +88,14 @@ export default function Home() {
           <CrossroadsHub />
           <HeroSection />
           <PrecastEquipmentGrid />
+          <TaglineHeros {...customTaglines[0]} />
           <RegionalPrecastersGrid />
           <CrossroadsFlippingHub />
           <PrecastCasting />
           {/* <FullWidthShowcase /> */}
+          <TaglineHero />
           {/* <TaglineShowcase /> */}
           <WhyPrecastExchange />
-          <TaglineHero />
           <RegionalReadyMixGrid />
           <AvenuesSection />
           <FormsAndMoldsGrid />

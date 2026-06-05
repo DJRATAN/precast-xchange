@@ -150,7 +150,7 @@ export default function CrossroadsFlippingHub() {
             return (
               <div
                 key={card.id}
-                className="w-[290px] h-[580px] cursor-pointer relative rounded-none group"
+                className="w-[290px] h-[500px] cursor-pointer relative rounded-none group"
                 onMouseEnter={() => setFlippedCard(card.id)}
                 onMouseLeave={() => setFlippedCard(null)}
                 onClick={() => setFlippedCard(isFlipped ? null : card.id)}
