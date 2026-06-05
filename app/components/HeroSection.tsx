@@ -42,7 +42,7 @@ export default function HeroSection() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-50 scale-105"
+          className="w-full h-full object-cover opacity-80 scale-105"
         />
         {/* Deep, rich overlay to force contrast and readability */}
         <div className="absolute inset-0" />
