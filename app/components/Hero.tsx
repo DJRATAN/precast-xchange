@@ -39,8 +39,8 @@ export default function Hero() {
     }, [subIndex, index, reverse])
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-white rounded-none border-b-4 border-[#004aad]">
-            
+        <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad]">
+
             {/* Optimized Background Video Layer */}
             <div className="absolute inset-0 z-0 rounded-none bg-white">
                 <video
@@ -49,15 +49,14 @@ export default function Hero() {
                     muted
                     playsInline
                     preload="auto"
-                    poster="/video-placeholder-frame.png" 
+                    poster="/video-placeholder-frame.png"
                     onCanPlayThrough={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${
-                        isVideoLoaded ? 'opacity-[0.8]' : 'opacity-0'
-                    }`}
+                    className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${isVideoLoaded ? 'opacity-[0.8]' : 'opacity-0'
+                        }`}
                 >
-                    <source 
+                    <source
                         src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4"
-                        type="video/mp4" 
+                        type="video/mp4"
                     />
                 </video>
             </div>
@@ -66,20 +65,20 @@ export default function Hero() {
             <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE08_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE08_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none rounded-none" />
 
             {/* Hero Text Stack */}
-            <div className="relative z-20 text-center w-full max-w-7xl px-6 py-12 rounded-none">
-                <div className="flex flex-col items-center justify-center rounded-none">
-                    
-                    {/* FIXED LINE */}
-                    <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center justify-center rounded-none">
-                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase whitespace-nowrap leading-none text-white rounded-none">
+            <div className="relative z-20 text-start w-full max-w-7xl px-12 py-12 rounded-none">
+                <div className="flex flex-row items-start justify-start gap-x-4 md:gap-x-6 rounded-none w-full whitespace-nowrap">
+
+                    {/* FIXED LINE - Placed directly on the row layout */}
+                    <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center rounded-none">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase whitespace-nowrap leading-none text-white rounded-none">
                             IT IS A TOTAL
                         </h1>
                     </div>
 
-                    {/* ANIMATED LINE */}
-                    <div className="h-[60px] sm:h-[90px] md:h-[110px] lg:h-[130px] flex items-center justify-center rounded-none relative mt-4">
+                    {/* ANIMATED LINE - Sits perfectly next to it on the same line */}
+                    <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center rounded-none relative">
                         <span
-                            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
                             style={{
                                 paintOrder: "stroke fill",
                                 WebkitTextStroke: "3px #004aad",
@@ -100,7 +99,7 @@ export default function Hero() {
                 </p>
 
                 {/* Call to Action Row */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-10 rounded-none">
+                <div className="flex flex-col sm:flex-row gap-4 justify-start pt-10 rounded-none">
                     <button className="bg-[#004aad] border-2 border-[#004aad] text-white px-10 py-4 text-xs font-black uppercase tracking-widest hover:bg-[#1B79EE] hover:border-[#1B79EE] transition-colors rounded-none outline-none">
                         Explore Exchange
                     </button>
