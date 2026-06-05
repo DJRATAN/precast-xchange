@@ -50,13 +50,13 @@ export default function Home() {
     },
     {
       topMicroText: "FACILITY TRANSFORMATIONS • RE-ENGINEERED",
-      videoSrc: "/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4",
+      videoSrc: "/video/6133943_Traffic Light Canada Toronto City_By_Adrian_Vidak_Artlist_HD.mp4",
       ctaText: "View Location Map",
       // White text layout with dark blue accent
       lineOneText: "STOP AND VISIT US ON KING STREET",
       lineOneDefaultColor: "darkBlue",
       lineTwoText: "FOR A TOTAL ",
-      lineTwoDefaultColor: "darkBlue",
+      lineTwoDefaultColor: "white",
       lineTwoHighlightText: "TRANSFORMATION",
       lineTwoHighlightColor: "lightBlue"
     },
@@ -90,6 +90,7 @@ export default function Home() {
           <PrecastEquipmentGrid />
           <TaglineHeros {...customTaglines[0]} />
           <RegionalPrecastersGrid />
+          <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
           <PrecastCasting />
           {/* <FullWidthShowcase /> */}
