@@ -18,9 +18,7 @@ export default function TaglineHero() {
                     playsInline
                     preload="auto"
                     onCanPlayThrough={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${
-                        isVideoLoaded ? 'opacity-[0.9]' : 'opacity-0'
-                    }`}
+                    className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none`}
                 >
                     <source 
                         src="/video/6610313_Scenic Serene Snowy Mountains Bridges_By_Andriy_Stefanyshyn_Artlist_HD.mp4" 
@@ -46,12 +44,12 @@ export default function TaglineHero() {
                     
                     {/* First Line of Tagline */}
                     <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-[#004aad] rounded-none">
-                        CONCRETE <span className="text-[#1B79EE]">BRIDGING</span>
+                        CONCRETE <span className="text-white">BRIDGING</span>
                     </h1>
 
                     {/* Second Line of Tagline */}
                     <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-[#004aad] rounded-none">
-                        & CONNECTING ALL <span className="text-[#1B79EE]">PRECASTERS</span>
+                        & CONNECTING ALL <span className="text-white">PRECASTERS</span>
                     </h1>
  
 

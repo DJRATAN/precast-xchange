@@ -148,7 +148,7 @@ export default function Navigation() {
       <div className="w-full bg-white border-t-2 border-[#004aad]/10 px-8 md:px-10 py-2 flex items-center justify-between overflow-hidden relative z-20 rounded-none">
         <div className="flex items-center gap-4 rounded-none">
           <span className="text-xs font-black text-[#004aad] uppercase tracking-wider whitespace-nowrap rounded-none">
-            Sponsoring Systems:
+            Proudly Supporting & Sponsoring
           </span>
           <div className="flex items-center gap-4 rounded-none">
             {[1, 2, 3, 4, 5, 6].map((idx) => (
