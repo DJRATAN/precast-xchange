@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 
 const words = [
-    "PRECAST EXCHANGE",
     "BARTER",
     "BUY",
     "SELL",
@@ -66,19 +65,19 @@ export default function Hero() {
 
             {/* Hero Text Stack */}
             <div className="relative z-20 text-start w-full max-w-7xl px-12 py-12 rounded-none">
-                <div className="flex flex-row items-start justify-start gap-x-4 md:gap-x-6 rounded-none w-full whitespace-nowrap">
+                <div className="flex flex-col items-start justify-center gap-x-4 md:gap-x-6 rounded-none w-full whitespace-nowrap">
 
                     {/* FIXED LINE - Placed directly on the row layout */}
                     <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center rounded-none">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase whitespace-nowrap leading-none text-white rounded-none">
-                            IT IS A TOTAL
+                            IT IS A TOTAL PRECAST EXCHANGE
                         </h1>
                     </div>
 
                     {/* ANIMATED LINE - Sits perfectly next to it on the same line */}
                     <div className="h-[50px] sm:h-[80px] md:h-[90px] lg:h-[100px] flex items-center rounded-none relative">
                         <span
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
+                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none whitespace-nowrap rounded-none"
                             style={{
                                 paintOrder: "stroke fill",
                                 WebkitTextStroke: "3px #004aad",

@@ -108,7 +108,7 @@ export default function Home() {
           <TaglineHero />
           {/* <TaglineShowcase /> */}
           <WhyPrecastExchange />
-          {/* <TaglineHeros {...customTaglines[3]} /> */}
+          <TaglineHeros {...customTaglines[3]} />
           <RegionalReadyMixGrid />
           <AvenuesSection />
           <FormsAndMoldsGrid />
