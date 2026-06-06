@@ -20,6 +20,7 @@ import TaglineShowcase from "../components/TaglineShowcase";
 import TaglineSection from "../components/TaglineSection";
 import MarketActionHub from "../components/MarketActionHub";
 import FourColumnMarquee from "./FourColumnMarquee";
+
 // Define the type locally here to resolve the error instantly
 interface TaglineProps {
   topMicroText: string;
@@ -89,7 +90,7 @@ export default function Home() {
     },
     {
       topMicroText: "KNOWLEDGE & RE-EDUCATION SYSTEMS",
-      videoSrc: "/video/611613_Low Angle Skyscrapers Buildings City_By_Justin_Tierney_Artlist_HD.mp4",
+      videoSrc: "/video/6304898_City Building Window Cityscape_By_Videophilia_Artlist_HD.mp4",
       ctaText: "Access Terminal",
       // "UNDERSTANDING PRECAST" -> "PRECAST" highlighted in Light Blue
       lineOneText: "UNDERSTANDING ",
@@ -107,15 +108,14 @@ export default function Home() {
     <div className="w-full bg-[#f8f9fa] min-h-screen font-sans">
       <div className="w-full mx-auto flex justify-center items-start gap-4 px-4">
 
-        <aside className="hidden xl:block w-[160px] sticky top-4 h-[600px] border border-slate-300 flex items-center justify-center text-xs text-muted-foreground text-center p-2">
+        <aside className="hidden xl:block w-[160px] shrink-0 sticky top-4 h-[600px] border border-slate-300 flex items-center justify-center text-xs text-muted-foreground text-center p-2">
           <LeftVideoAds />
         </aside>
 
-        <main className="w-full bg-white border border-slate-200 shadow-sm min-h-screen">
+        <main className="flex-1 min-w-0 bg-white border border-slate-200 shadow-sm min-h-screen">
           {/* <MarketActionHub /> */}
           <CrossroadsHub />
           <HeroSection />
-
           <PrecastEquipmentGrid />
           <MarketActionHub />
           <TaglineHeros {...customTaglines[0]} />
@@ -130,14 +130,14 @@ export default function Home() {
           <WhyPrecastExchange />
           <TaglineHeros {...customTaglines[3]} />
           <RegionalReadyMixGrid />
-          {/* <TaglineHeros {...customTaglines[4]} /> */}
+          <TaglineHeros {...customTaglines[4]} />
           <AvenuesSection />
           <FormsAndMoldsGrid />
           <EquipmentCatalog />
         </main>
 
         {/* RIGHT SKYSCRAPER AD */}
-        <aside className="hidden xl:block w-[160px] sticky top-4 h-[600px] border border-slate-300 overflow-hidden shadow-2xl">
+        <aside className="hidden xl:block w-[160px] shrink-0 sticky top-4 h-[600px] border border-slate-300 overflow-hidden shadow-2xl">
           <RightVideoAds />
         </aside>
 

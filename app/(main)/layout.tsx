@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import { Metadata } from 'next';
 import Hero from '../components/Hero';
+import CrossroadsHub from '../components/CrossroadsHub';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function MainLayout({
     >
       <Navigation />
       <Hero />
+      <CrossroadsHub />
       <body className="min-h-full flex flex-col">{children}</body>
       <ExtraordinaryFooter />
     </html>
