@@ -154,25 +154,43 @@ export default function Navigation() {
 
       {/* Sponsor Ribbon (Header Bottom Area) */}
       <div className="w-full bg-white border-t-2 border-[#004aad]/10 px-8 md:px-10 py-2 flex items-center justify-between overflow-hidden relative z-20 rounded-none">
-        <div className="flex items-center gap-4 rounded-none">
-          <span className="text-xs font-black text-[#004aad] uppercase tracking-wider whitespace-nowrap rounded-none">
+        <div className="flex items-center gap-4 rounded-none w-full overflow-hidden">
+          <span className="text-xs font-black text-[#004aad] uppercase tracking-wider whitespace-nowrap rounded-none bg-white pr-4 z-10">
             Proudly Supporting & Sponsoring
           </span>
-          <div className="flex items-center gap-4 rounded-none">
-            {sponsorImg.map((idx, index) => (
-              <div key={index} className="h-8 w-20 relative border border-[#004aad]/10 p-0.5 rounded-none">
-                <Image
-                  src={idx.href}
-                  alt={idx.alt}
-                  fill
-                  className="object-contain rounded-none"
-                />
+          <div className="relative flex-1 overflow-hidden rounded-none">
+            {/* Gradient overlays for smooth fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex w-max animate-marquee rounded-none">
+              <div className="flex items-center gap-6 pr-6 rounded-none">
+                {sponsorImg.map((idx, index) => (
+                  <div key={index} className="h-8 w-20 relative border border-[#004aad]/10 p-0.5 rounded-none flex-shrink-0">
+                    <Image
+                      src={idx.href}
+                      alt={idx.alt}
+                      fill
+                      className="object-contain rounded-none"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+              <div className="flex items-center gap-6 pr-6 rounded-none" aria-hidden="true">
+                {sponsorImg.map((idx, index) => (
+                  <div key={`dup-${index}`} className="h-8 w-20 relative border border-[#004aad]/10 p-0.5 rounded-none flex-shrink-0">
+                    <Image
+                      src={idx.href}
+                      alt={idx.alt}
+                      fill
+                      className="object-contain rounded-none"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="hidden lg:block h-0.5 flex-grow mx-8 bg-gradient-to-r from-transparent via-[#1B79EE]/30 to-transparent rounded-none" />
       </div>
     </header>
   )

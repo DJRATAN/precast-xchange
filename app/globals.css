@@ -9,6 +9,7 @@
 
   /* Apple-Style Animation Definition */
   --animate-subtle-zoom: subtle-zoom 25s ease-in-out infinite alternate;
+  --animate-marquee: marquee 25s linear infinite;
 
   @keyframes subtle-zoom {
     0% {
@@ -17,6 +18,15 @@
 
     100% {
       transform: scale(1.08);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 
