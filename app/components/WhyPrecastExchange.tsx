@@ -59,7 +59,7 @@ export default function WhyPrecastExchange() {
   ]
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full py-20 bg-white">
       <div className="w-full px-8 md:px-10">
         
         {/* Header Block Section */}

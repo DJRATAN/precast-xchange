@@ -1,11 +1,21 @@
 'use client'
 
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState, ChangeEvent, useEffect } from 'react'
 import { createBrowserClient } from '@supabase/auth-helpers-nextjs'
-import { Upload, ArrowRight, CheckCircle2, AlertCircle, X } from 'lucide-react'
+import { Upload, ArrowRight, CheckCircle2, AlertCircle, X, RefreshCw, FileText } from 'lucide-react'
 
 type IntentType = 'BARTER' | 'BUY' | 'SELL' | 'TRADE' | 'LOANERS' | 'REPAIRS' | 'DONATE' | 'MANUFACTURING';
 type PostType = 'POST' | 'REQUEST';
+
+interface Listing {
+  id: string;
+  intent: IntentType;
+  post_type: PostType;
+  title: string;
+  description: string;
+  media_url: string | null;
+  created_at?: string;
+}
 
 export default function MarketActionHub() {
   const supabase = createBrowserClient(
@@ -23,6 +33,28 @@ export default function MarketActionHub() {
   // UX State Indicators
   const [loading, setLoading] = useState(false)
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+  const [listings, setListings] = useState<Listing[]>([])
+  const [fetchLoading, setFetchLoading] = useState(false)
+
+  const fetchListings = async () => {
+    setFetchLoading(true)
+    try {
+      const { data, error } = await supabase
+        .from('precast_market_listings')
+        .select('*')
+        .order('created_at', { ascending: false })
+      if (error) throw error
+      setListings(data || [])
+    } catch (err: any) {
+      console.error('Error fetching listings:', err)
+    } finally {
+      setFetchLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchListings()
+  }, [])
 
   const intents: { id: IntentType; label: string }[] = [
     { id: 'BARTER', label: 'BARTER' },
@@ -84,6 +116,7 @@ export default function MarketActionHub() {
       setTitle('')
       setDescription('')
       setFile(null)
+      fetchListings()
     } catch (error: any) {
       setStatusMessage({ type: 'error', text: error.message || 'Transmission pipeline interrupted.' })
     } finally {
@@ -92,7 +125,7 @@ export default function MarketActionHub() {
   }
 
   return (
-    <section className="w-full bg-white py-12 px-6 md:px-12 border-b-4 border-[#004aad] rounded-none text-left">
+    <section className="w-full bg-white py-12 px-6 md:px-12 rounded-none text-left">
       <div className="max-w-7xl mx-auto flex flex-col gap-8 rounded-none">
         
         {/* TOP ROW: Title Header and Menu Intents in One Row */}
@@ -129,16 +162,59 @@ export default function MarketActionHub() {
           </div>
         </div>
 
-        {/* BOTTOM ROW: Full Width Action Form Routing Panel */}
-        <div className="w-full border-2 border-[#004aad] p-6 md:p-8 bg-white rounded-none">
-          
-          <div className="grid grid-cols-2 gap-2 mb-8 rounded-none max-w-md">
+        {/* TOP PANEL: Tabwise Active Listings Registry (Full Width, 4 Columns Grid) */}
+        <div className="w-full p-6 md:p-8 bg-[#f8f9fa] rounded-none space-y-6">
+          <div className="flex justify-between items-center border-b-2 border-[#004aad]/10 pb-4">
+            <div>
+              <span className="text-[9px] font-mono font-bold text-[#1B79EE] uppercase tracking-[0.2em]">LIVE TRANSACTION REGISTER</span>
+              <h3 className="text-lg font-black text-[#004aad] uppercase mt-1">ACTIVE {selectedIntent} REGISTRY</h3>
+            </div>
+            <button
+              type="button"
+              onClick={fetchListings}
+              className="p-2 border-2 border-[#004aad]/20 hover:border-[#1B79EE] text-[#004aad] hover:text-[#1B79EE] bg-white transition-all cursor-pointer rounded-none flex items-center justify-center"
+              title="Refetch Node Feed"
+            >
+              <RefreshCw className={`w-4 h-4 ${fetchLoading ? 'animate-spin' : ''}`} />
+            </button>
+          </div>
+
+          {fetchLoading && listings.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#004aad]/20 bg-white">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1B79EE]" />
+              <p className="text-[10px] font-mono font-bold text-[#004aad] mt-4 uppercase">SYNCING DATA STREAM...</p>
+            </div>
+          ) : listings.filter((item) => item.intent === selectedIntent).length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#004aad]/20 bg-white text-center px-4">
+              <AlertCircle className="w-8 h-8 text-[#004aad]/40 mb-3" />
+              <p className="text-xs font-bold text-[#004aad] uppercase">NO SYSTEM DATA NODES FOUND</p>
+              <p className="text-[9px] text-[#004aad]/60 font-mono mt-1 uppercase">BE THE FIRST TO DEPOSIT AN ASSET TO THIS INTENT MATRIX</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {listings
+                .filter((item) => item.intent === selectedIntent)
+                .map((item) => (
+                  <ListingCard key={item.id} item={item} />
+                ))}
+            </div>
+          )}
+        </div>
+
+        {/* BOTTOM PANEL: Upload Terminal Form Card (Full Width) */}
+        <div className="w-full p-6 md:p-8 bg-white rounded-none space-y-6">
+          <div className="border-b-2 border-[#004aad]/10 pb-4">
+            <span className="text-[9px] font-mono font-bold text-[#1B79EE] uppercase tracking-[0.2em]">OPERATIONAL UPLOAD TERMINAL</span>
+            <h3 className="text-lg font-black text-[#004aad] uppercase mt-1">PUBLISH {selectedIntent} NODE</h3>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 mb-6 rounded-none max-w-md">
             <button
               type="button"
               onClick={() => setPostType('POST')}
               className={`py-3 text-xs font-black uppercase tracking-widest transition-all rounded-none border-2 ${
                 postType === 'POST'
-                  ? 'bg-[#1B79EE] border-[#1B79EE] text-white'
+                  ? 'bg-[#1B79EE] border-[#1B79EE] text-white shadow-[2px_2px_0px_#004aad]/10'
                   : 'bg-white border-[#004aad]/20 text-[#004aad] hover:border-[#004aad]'
               }`}
             >
@@ -150,7 +226,7 @@ export default function MarketActionHub() {
               onClick={() => setPostType('REQUEST')}
               className={`py-3 text-xs font-black uppercase tracking-widest transition-all rounded-none border-2 disabled:opacity-30 ${
                 postType === 'REQUEST'
-                  ? 'bg-[#1B79EE] border-[#1B79EE] text-white'
+                  ? 'bg-[#1B79EE] border-[#1B79EE] text-white shadow-[2px_2px_0px_#004aad]/10'
                   : 'bg-white border-[#004aad]/20 text-[#004aad] hover:border-[#004aad]'
               }`}
             >
@@ -158,7 +234,7 @@ export default function MarketActionHub() {
             </button>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5 rounded-none">
+          <form onSubmit={handleSubmit} className="space-y-5 rounded-none max-w-3xl">
             <div className="space-y-1 rounded-none">
               <label className="text-[10px] font-mono font-bold text-[#004aad] uppercase tracking-wider">Asset Listing Nomenclature / Title</label>
               <input
@@ -231,5 +307,98 @@ export default function MarketActionHub() {
         </div>
       </div>
     </section>
+  )
+}
+
+function isVideoUrl(url: string | null): boolean {
+  if (!url) return false
+  const cleanUrl = url.split('?')[0]
+  const ext = cleanUrl.split('.').pop()?.toLowerCase()
+  return ['mp4', 'webm', 'ogg', 'mov', 'm4v', '3gp'].includes(ext || '')
+}
+
+function ListingCard({ item }: { item: Listing }) {
+  const isVideo = isVideoUrl(item.media_url)
+  const formattedDate = item.created_at
+    ? new Date(item.created_at).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      })
+    : 'GENESIS NODE'
+
+  return (
+    <div className="bg-white border-2 border-[#004aad] p-4 flex flex-col justify-between gap-3 shadow-[3px_3px_0px_#004aad]/10 hover:shadow-[4px_4px_0px_#1B79EE] transition-all rounded-none group">
+      <div className="space-y-2">
+        {/* Card Header: Type Badge & Date */}
+        <div className="flex items-center justify-between border-b border-[#004aad]/10 pb-2">
+          <span className={`px-2 py-0.5 text-[8px] font-mono font-black tracking-wider uppercase border ${
+            item.post_type === 'POST'
+              ? 'bg-[#1B79EE]/10 border-[#1B79EE] text-[#1B79EE]'
+              : 'bg-amber-50 border-amber-500 text-amber-800'
+          }`}>
+            {item.post_type}
+          </span>
+          <span className="text-[8px] font-mono text-[#004aad]/60 font-bold uppercase">{formattedDate}</span>
+        </div>
+
+        {/* Card Title */}
+        <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tight line-clamp-1 group-hover:text-[#1B79EE] transition-colors">{item.title}</h4>
+
+        {/* Card Description */}
+        <p className="text-[10px] text-[#004aad]/70 leading-relaxed line-clamp-3 font-medium min-h-[40px]">{item.description}</p>
+      </div>
+
+      {/* Media display */}
+      <div className="w-full">
+        {item.media_url ? (
+          isVideo ? (
+            <video
+              src={item.media_url}
+              controls
+              className="w-full h-40 object-cover border border-[#004aad]/20 bg-black"
+            />
+          ) : (
+            <img
+              src={item.media_url}
+              alt={item.title}
+              className="w-full h-40 object-cover border border-[#004aad]/20 hover:scale-[1.02] transition-transform duration-300"
+            />
+          )
+        ) : (
+          <div className="w-full h-40 bg-[#004aad]/5 border border-[#004aad]/10 flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: 'radial-gradient(circle, #004aad 1px, transparent 1px)',
+              backgroundSize: '16px 16px'
+            }} />
+            <FileText className="w-6 h-6 text-[#004aad]/30 mb-1" />
+            <span className="text-[8px] font-mono text-[#004aad]/40 font-bold">SCHEMATIC UNKNOWN</span>
+          </div>
+        )}
+      </div>
+
+      {/* Card Action footer */}
+      <div className="flex gap-2 pt-2 border-t border-[#004aad]/10">
+        <button
+          type="button"
+          disabled={!item.media_url}
+          onClick={() => {
+            if (item.media_url) {
+              window.open(item.media_url, '_blank')
+            }
+          }}
+          className="flex-1 bg-white border border-[#004aad]/20 text-[#004aad] hover:border-[#1B79EE] hover:text-[#1B79EE] py-2 text-[9px] font-mono font-bold uppercase transition-all rounded-none disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer text-center"
+        >
+          View Blueprint
+        </button>
+        <button
+          type="button"
+          className="flex-1 bg-[#004aad] text-white hover:bg-[#1B79EE] py-2 text-[9px] font-mono font-black uppercase transition-all rounded-none cursor-pointer text-center"
+          onClick={() => alert(`INITIATING DIRECT CONTRACT SIGNAL FOR: ${item.title}`)}
+        >
+          Connect Node
+        </button>
+      </div>
+    </div>
   )
 }

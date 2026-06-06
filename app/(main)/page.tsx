@@ -85,6 +85,21 @@ export default function Home() {
       lineTwoDefaultColor: "darkBlue",
       lineTwoHighlightText: "ANIMATION",
       lineTwoHighlightColor: "lightBlue"
+    },
+    {
+      topMicroText: "KNOWLEDGE & RE-EDUCATION SYSTEMS",
+      videoSrc: "/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4",
+      ctaText: "Access Terminal",
+      // "UNDERSTANDING PRECAST" -> "PRECAST" highlighted in Light Blue
+      lineOneText: "UNDERSTANDING ",
+      lineOneDefaultColor: "darkBlue",
+      lineOneHighlightText: "PRECAST ",
+      lineOneHighlightColor: "lightBlue",
+      // "TO THE NEXT LEVEL" -> "NEXT LEVEL" highlighted in Light Blue
+      lineTwoText: "TO THE ",
+      lineTwoDefaultColor: "darkBlue",
+      lineTwoHighlightText: "NEXT LEVEL",
+      lineTwoHighlightColor: "lightBlue"
     }
   ]
   return (
@@ -99,8 +114,9 @@ export default function Home() {
           {/* <MarketActionHub /> */}
           <CrossroadsHub />
           <HeroSection />
+
           <PrecastEquipmentGrid />
-          <MarketActionHub/>
+          <MarketActionHub />
           <TaglineHeros {...customTaglines[0]} />
           <RegionalPrecastersGrid />
           <TaglineHeros {...customTaglines[1]} />
