@@ -19,6 +19,7 @@ import { FullWidthShowcase } from "../components/FullWidthShowcase";
 import TaglineShowcase from "../components/TaglineShowcase";
 import TaglineSection from "../components/TaglineSection";
 import MarketActionHub from "../components/MarketActionHub";
+import FourColumnMarquee from "./FourColumnMarquee";
 // Define the type locally here to resolve the error instantly
 interface TaglineProps {
   topMicroText: string;
@@ -88,18 +89,18 @@ export default function Home() {
     },
     {
       topMicroText: "KNOWLEDGE & RE-EDUCATION SYSTEMS",
-      videoSrc: "/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4",
+      videoSrc: "/video/611613_Low Angle Skyscrapers Buildings City_By_Justin_Tierney_Artlist_HD.mp4",
       ctaText: "Access Terminal",
       // "UNDERSTANDING PRECAST" -> "PRECAST" highlighted in Light Blue
       lineOneText: "UNDERSTANDING ",
       lineOneDefaultColor: "darkBlue",
       lineOneHighlightText: "PRECAST ",
-      lineOneHighlightColor: "lightBlue",
+      lineOneHighlightColor: "white",
       // "TO THE NEXT LEVEL" -> "NEXT LEVEL" highlighted in Light Blue
       lineTwoText: "TO THE ",
       lineTwoDefaultColor: "darkBlue",
       lineTwoHighlightText: "NEXT LEVEL",
-      lineTwoHighlightColor: "lightBlue"
+      lineTwoHighlightColor: "white"
     }
   ]
   return (
@@ -121,6 +122,7 @@ export default function Home() {
           <RegionalPrecastersGrid />
           <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
+          <FourColumnMarquee />
           <PrecastCasting />
           {/* <FullWidthShowcase /> */}
           <TaglineHero />
@@ -128,6 +130,7 @@ export default function Home() {
           <WhyPrecastExchange />
           <TaglineHeros {...customTaglines[3]} />
           <RegionalReadyMixGrid />
+          {/* <TaglineHeros {...customTaglines[4]} /> */}
           <AvenuesSection />
           <FormsAndMoldsGrid />
           <EquipmentCatalog />

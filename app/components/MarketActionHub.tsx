@@ -126,7 +126,7 @@ export default function MarketActionHub() {
 
   return (
     <section className="w-full bg-white py-12 px-6 md:px-12 rounded-none text-left">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8 rounded-none">
+      <div className="w-full flex flex-col gap-8 rounded-none">
         
         {/* TOP ROW: Title Header and Menu Intents in One Row */}
         <div className="w-full space-y-4 border-b-2 border-[#004aad]/10 pb-6 rounded-none">
@@ -287,7 +287,7 @@ export default function MarketActionHub() {
                 <button
                   type="button"
                   onClick={() => setStatusMessage(null)}
-                  className="p-1 hover:bg-black/5 rounded-none transition-colors outline-none cursor-pointer flex items-center justify-center"
+                  className="p-1 hover:bg-[#004aad]/5 rounded-none transition-colors outline-none cursor-pointer flex items-center justify-center"
                 >
                   <X className="w-4 h-4 text-current" />
                 </button>
@@ -356,7 +356,7 @@ function ListingCard({ item }: { item: Listing }) {
             <video
               src={item.media_url}
               controls
-              className="w-full h-40 object-cover border border-[#004aad]/20 bg-black"
+              className="w-full h-40 object-cover border border-[#004aad]/20 bg-[#004aad]"
             />
           ) : (
             <img
