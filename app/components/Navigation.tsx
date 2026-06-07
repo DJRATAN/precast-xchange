@@ -56,10 +56,10 @@ export default function Navigation() {
     <header className="w-full border-b-2 border-[#004aad] bg-white relative rounded-none">
 
       {/* Brand & Authentication Row */}
-      <div className="w-full px-8 md:px-10 py-4 flex flex-col md:flex-row justify-between items-center gap-4 rounded-none">
+      <div className="w-full px-8 md:px-10 py-1 flex flex-col md:flex-row justify-between items-center gap-4 rounded-none">
         <div className="flex items-center gap-4 rounded-none">
           {/* Logo */}
-          <div className="relative w-[150px] h-[60px] rounded-none">
+          <div className="relative w-[300px] h-[70px] rounded-none">
             <Image
               src="/pxg.png"
               alt="Precast Xchange"
@@ -175,7 +175,7 @@ export default function Navigation() {
       </nav>
 
       {/* Sponsor Ribbon (Header Bottom Area) */}
-      <div className="w-full bg-white border-t-2 border-[#004aad]/10 px-8 md:px-10 py-2 flex items-center justify-between overflow-hidden relative z-20 rounded-none">
+      <div className="w-full bg-white border-t-2 border-[#004aad]/10 px-8 md:px-10 flex items-center justify-between overflow-hidden relative z-20 rounded-none">
         <div className="flex items-center gap-4 rounded-none w-full overflow-hidden">
           <span className="text-xs font-black text-[#004aad] uppercase tracking-wider whitespace-nowrap rounded-none bg-white pr-4 z-10">
             Proudly Supporting & Sponsoring
@@ -188,7 +188,7 @@ export default function Navigation() {
             <div className="flex w-max animate-marquee rounded-none">
               <div className="flex items-center gap-6 pr-6 rounded-none">
                 {sponsorImg.map((idx, index) => (
-                  <div key={index} className="h-8 w-20 relative border border-[#004aad]/10 p-0.5 rounded-none flex-shrink-0">
+                  <div key={index} className="h-12 w-20 relative border border-[#004aad]/10 rounded-none flex-shrink-0">
                     <Image
                       src={idx.href}
                       alt={idx.alt}
