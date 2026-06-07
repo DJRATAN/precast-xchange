@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, VolumeX, Power, Activity, HardHat, Hammer, Cpu } from 'lucide-react';
+import { Volume2, VolumeX, Power, Activity, HardHat, Hammer, Cpu, Construction } from 'lucide-react';
 
 export default function EntrySystem() {
     const [isInitialized, setIsInitialized] = useState(false);
@@ -51,7 +51,7 @@ export default function EntrySystem() {
                         className="fixed inset-0 z-[9999] bg-white flex items-center justify-center p-4 md:p-6 overflow-hidden rounded-none"
                     >
                         {/* ARCHITECTURAL BACKGROUND GRID */}
-                        <div className="" />
+                        <div className=" " />
 
                         {/* MASTER INTERFACE CARD */}
                         <motion.div
@@ -81,6 +81,13 @@ export default function EntrySystem() {
                                         PRECAST EXCHANGE <span className="text-[#1B79EE]">GROUP</span>
                                     </h1>
                                 </div>
+                            </div>
+
+                            {/* SITE IN PROGRESS TICKER LOGIC STRIP */}
+                            <div className="w-full bg-[#1B79EE] text-white px-6 py-2.5 flex items-center gap-3 border-b-2 border-[#004aad]/20 rounded-none font-mono">
+                                 <span className="text-[10px] font-black uppercase tracking-[0.25em]">
+                                    Site In Progress
+                                </span>
                             </div>
 
                             {/* BOTTOM SECTION: WELCOME & TELEMETRY */}
