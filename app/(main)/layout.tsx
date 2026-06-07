@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 // UPDATED METADATA
 export const metadata: Metadata = {
   title: {
-    default: "PrecastXchange | The Universe of Precast",
+    default: "PrecastExchange | The Universe of Precast",
     template: "%s | PX"
   },
-  description: "Precast Xchange is a marketplace for total precast",
+  description: "Precast Exchange is a marketplace for total precast",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

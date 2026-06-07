@@ -127,7 +127,7 @@ export default function Hero() {
                 </div>
 
                 {/* RIGHT COLUMN: RECTANGULAR NAVIGATION LINK GRID (Bounded inside Hero Section) */}
-                <div className="lg:col-span-4 w-full flex flex-wrap lg:flex-col justify-start lg:items-end gap-3 z-30 rounded-none">
+                <div className="lg:col-span-4 w-full flex flex-wrap lg:flex-col justify-start px-12 lg:items-end gap-3 z-30 rounded-none">
                     {quickLinks.map((link) => (
                         <a
                             key={link.marker}
