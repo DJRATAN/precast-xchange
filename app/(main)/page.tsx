@@ -27,6 +27,7 @@ import PrecastMolds from "../components/PrecastMolds";
 import PrecastFoundries from "../components/PrecastFoundries";
 import PrecastEngineering from "../components/PrecastEngineering";
 import PrecastSuppliers from "../components/PrecastSuppliers";
+import PrecastPlayground from "./PrecastPlayground";
 
 // Define the type locally here to resolve the error instantly
 interface TaglineProps {
@@ -121,14 +122,14 @@ export default function Home() {
 
         <main className="flex-1 min-w-0 bg-white border border-slate-200 shadow-sm min-h-screen">
           {/* <MarketActionHub /> */}
-
+          <PrecastPlayground />
           <HeroSection />
           <PrecastEquipmentGrid />
-          <PrecastMolds/>
-          <PrecastCement/>
-          <PrecastEngineering/>
-          <PrecastSuppliers/>
-          <PrecastFoundries/>
+          <PrecastMolds />
+          <PrecastCement />
+          <PrecastEngineering />
+          <PrecastSuppliers />
+          <PrecastFoundries />
           <MarketActionHub />
           <TaglineHeros {...customTaglines[0]} />
           <RegionalPrecastersGrid />
