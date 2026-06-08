@@ -40,25 +40,32 @@ export default function Hero() {
 
     // Defined targets mapping out your ecosystem nodes
 const quickLinks = [
-    { label: "Exchange Terminal", href: "#terminal", marker: "LN-01" },
-    { label: "Market Hub Input", href: "#market-hub", marker: "LN-02" },
-    { label: "Supplies & Castings", href: "#supplies", marker: "LN-03" },
-    { label: "Talent & Workforce", href: "#talent", marker: "LN-04" },
-    { label: "Valuation Appraisals", href: "#appraisals", marker: "LN-05" },
-    { label: "Open Mind Forum", href: "#open-mind", marker: "LN-06" },
-    { label: "Events Schedule Grid", href: "#events", marker: "LN-07" },
-    { label: "Workforce Talent Pool", href: "#workforce-hub", marker: "LN-08" },
-    { label: "Blueprints Partner Marquee", href: "#partners", marker: "LN-09" },
-    // Replaced Duplicates with 7 Unique Industrial Segment Nodes:
-    { label: "Valves Flow Index", href: "#valves", marker: "LN-10" },
-    { label: "Pumps System Matrix", href: "#pumps", marker: "LN-11" },
-    { label: "Pipe Network Router", href: "#pipe", marker: "LN-12" },
-    { label: "Castings Production Ledger", href: "#castings", marker: "LN-13" },
-    { label: "Golf Tournaments Hub", href: "#golf", marker: "LN-14" },
-    { label: "Open Houses Showcase", href: "#open-houses", marker: "LN-15" },
-    { label: "Plant Tours Pipeline", href: "#plant-tours", marker: "LN-16" },
-    // Final Gateway Endpoint:
-    { label: "Portal System Entry", href: "#portal-boot", marker: "LN-17" }
+    { label: "Appraisals Valuation Matrix", href: "#appraisals", marker: "LN-01" },
+    { label: "Blueprints Partner Marquee", href: "#partners", marker: "LN-02" },
+    { label: "Castings Production Ledger", href: "#castings", marker: "LN-03" },
+    { label: "Directory Facility Nodes", href: "#directory", marker: "LN-04" },
+    { label: "Events Schedule Grid", href: "#events", marker: "LN-05" },
+    { label: "Exchange Terminal System", href: "#terminal", marker: "LN-06" },
+    { label: "Forms Moulds Manifest", href: "#forms-molds", marker: "LN-07" },
+    { label: "Golf Tournaments Hub", href: "#golf", marker: "LN-08" },
+    { label: "Hardware Component Registry", href: "#hardware", marker: "LN-09" },
+    { label: "Innovation Software Arrays", href: "#innovation", marker: "LN-10" },
+    { label: "Join Network Protocol", href: "#join-network", marker: "LN-11" },
+    { label: "Knowledge Resource Base", href: "#knowledge", marker: "LN-12" },
+    { label: "Logistics Router Engine", href: "#logistics", marker: "LN-13" },
+    { label: "Market Hub Input", href: "#market-hub", marker: "LN-14" },
+    { label: "Network Topology Status", href: "#network-topology", marker: "LN-15" },
+    { label: "Open Mind Forum", href: "#open-mind", marker: "LN-16" },
+    { label: "Pumps System Matrix", href: "#pumps", marker: "LN-17" },
+    { label: "Pipe Network Router", href: "#pipe", marker: "LN-18" },
+    { label: "Playground Video Stream", href: "#playground", marker: "LN-19" },
+    { label: "Quality Control Audits", href: "#quality", marker: "LN-20" },
+    { label: "Regional Ready Mix Grid", href: "#ready-mix", marker: "LN-21" },
+    { label: "Supplies & Accessories", href: "#supplies", marker: "LN-22" },
+    { label: "Talent & Workforce", href: "#talent", marker: "LN-23" },
+    { label: "Unlisted Request Ledger", href: "#unlisted-rfqs", marker: "LN-24" },
+    { label: "Valves Flow Index", href: "#valves", marker: "LN-25" },
+    { label: "Zone Operations Center", href: "#portal-boot", marker: "LN-26" }
 ];
 
     return (
@@ -144,7 +151,7 @@ const quickLinks = [
                             className="group flex items-center outline-none"
                         >
                             {/* Pure text block: White background, Blue text. Flips layout colors dynamically on hover. */}
-                            <span className="border-2 border-[#004aad] bg-white text-[#004aad] px-6 py-2 text-xs font-black uppercase tracking-widest hover:bg-[#004aad] hover:text-white transition-colors rounded-none outline-none">
+                            <span className="border-2 border-[#004aad] bg-white text-[#004aad] px-6 py-2 w-35 item-center text-xs font-black uppercase tracking-widest hover:bg-[#004aad] hover:text-white transition-colors rounded-none outline-none">
                                 {link.label.split(' ')[0]}
                             </span>
                         </a>
