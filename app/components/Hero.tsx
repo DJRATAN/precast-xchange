@@ -39,18 +39,27 @@ export default function Hero() {
     }, [subIndex, index, reverse])
 
     // Defined targets mapping out your ecosystem nodes
-    const quickLinks = [
-        { label: "Exchange Terminal", href: "#terminal", marker: "LN-01" },
-        { label: "Market Hub Input", href: "#market-hub", marker: "LN-02" },
-        { label: "Supplies & Castings", href: "#supplies", marker: "LN-03" },
-        { label: "Talent & Workforce", href: "#talent", marker: "LN-04" },
-        { label: "Valuation Appraisals", href: "#appraisals", marker: "LN-05" },
-        { label: "Open Mind Forum", href: "#open-mind", marker: "LN-06" },
-        { label: "Events Schedule Grid", href: "#events", marker: "LN-07" },
-        { label: "Workforce Talent Pool", href: "#workforce-hub", marker: "LN-08" },
-        { label: "Blueprints Partner Marquee", href: "#partners", marker: "LN-09" },
-        { label: "Portal System Entry", href: "#portal-boot", marker: "LN-10" }
-    ];
+const quickLinks = [
+    { label: "Exchange Terminal", href: "#terminal", marker: "LN-01" },
+    { label: "Market Hub Input", href: "#market-hub", marker: "LN-02" },
+    { label: "Supplies & Castings", href: "#supplies", marker: "LN-03" },
+    { label: "Talent & Workforce", href: "#talent", marker: "LN-04" },
+    { label: "Valuation Appraisals", href: "#appraisals", marker: "LN-05" },
+    { label: "Open Mind Forum", href: "#open-mind", marker: "LN-06" },
+    { label: "Events Schedule Grid", href: "#events", marker: "LN-07" },
+    { label: "Workforce Talent Pool", href: "#workforce-hub", marker: "LN-08" },
+    { label: "Blueprints Partner Marquee", href: "#partners", marker: "LN-09" },
+    // Replaced Duplicates with 7 Unique Industrial Segment Nodes:
+    { label: "Valves Flow Index", href: "#valves", marker: "LN-10" },
+    { label: "Pumps System Matrix", href: "#pumps", marker: "LN-11" },
+    { label: "Pipe Network Router", href: "#pipe", marker: "LN-12" },
+    { label: "Castings Production Ledger", href: "#castings", marker: "LN-13" },
+    { label: "Golf Tournaments Hub", href: "#golf", marker: "LN-14" },
+    { label: "Open Houses Showcase", href: "#open-houses", marker: "LN-15" },
+    { label: "Plant Tours Pipeline", href: "#plant-tours", marker: "LN-16" },
+    // Final Gateway Endpoint:
+    { label: "Portal System Entry", href: "#portal-boot", marker: "LN-17" }
+];
 
     return (
         <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad]">
@@ -127,7 +136,7 @@ export default function Hero() {
                 </div>
 
                 {/* RIGHT COLUMN: RECTANGULAR NAVIGATION LINK GRID (Bounded inside Hero Section) */}
-                <div className="lg:col-span-4 w-full flex flex-wrap lg:flex-col justify-start px-12 lg:items-end gap-3 z-30 rounded-none">
+                <div className="lg:col-span-4 w-full flex flex-wrap lg:flex-col justify-start px-12 lg:items-end gap-1 z-30 rounded-none">
                     {quickLinks.map((link) => (
                         <a
                             key={link.marker}
@@ -135,7 +144,7 @@ export default function Hero() {
                             className="group flex items-center outline-none"
                         >
                             {/* Pure text block: White background, Blue text. Flips layout colors dynamically on hover. */}
-                            <span className="bg-white text-[#004aad] border-2 border-[#004aad] px-2 py-1 text-[10px] font-black uppercase tracking-widest transition-all duration-200 rounded-none shadow-[3px_3px_0px_#1B79EE] group-hover:bg-[#004aad] group-hover:text-white group-hover:shadow-none group-hover:translate-x-0.5 group-hover:translate-y-0.5">
+                            <span className="border-2 border-[#004aad] bg-white text-[#004aad] px-6 py-2 text-xs font-black uppercase tracking-widest hover:bg-[#004aad] hover:text-white transition-colors rounded-none outline-none">
                                 {link.label.split(' ')[0]}
                             </span>
                         </a>
