@@ -148,17 +148,80 @@ export default function CrossroadsHub() {
 
       <div className="w-full  relative z-10">
 
-        {/* Header Text Block */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#004aad]/10 border border-[#1B79EE]/30 px-4 py-1.5 text-xs font-mono font-black text-[#1B79EE] uppercase tracking-widest mb-4 rounded-none">
-            Industrial Trading Architecture
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#004aad] uppercase rounded-none">
-            The Crossroads of Everything <span className="text-[#1B79EE]">Precast</span>
-          </h2>
-          <p className="text-[#1B79EE] mt-4 max-w-2xl mx-auto text-sm md:text-base font-light rounded-none">
-            Every pipeline converging in one environment. Hover or select an operational target path to interact with the global ledger ecosystem.
-          </p>
+
+
+        {/* Standardized 290px Card Grid Array */}
+        <div className="flex flex-row flex-nowrap mb-12 justify-start items-start gap-6 overflow-x-auto w-full pb-8 pt-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:bg-[#004aad] [&::-webkit-scrollbar-thumb]:hover:bg-[#1B79EE] [scrollbar-width:thin] [scrollbar-color:#004aad_#f1f5f9]">
+          {operations.map((card) => (
+            /* Card Bounds: Exactly 290px x 580px, completely flat corners (0px) */
+            <div
+              key={card.id}
+              className={`w-[290px] h-[580px] flex-shrink-0 rounded-none border-2 flex flex-col justify-between overflow-hidden transition-all duration-300 group ${card.isLightVariant
+                ? 'bg-white border-[#1B79EE]/40 hover:bg-[#1B79EE] hover:border-[#1B79EE]'
+                : 'bg-white border-[#004aad] hover:bg-[#004aad] hover:border-[#004aad]'
+                }`}
+            >
+
+              {/* Top Block */}
+              <div>
+                {/* Native HTML5 High-Performance Video Player: Exactly 286px x 256px */}
+                <div className="relative w-[286px] h-[256px] mx-auto bg-black overflow-hidden rounded-none mt-[2px]">
+                  {/* <video
+                    src={card.imageSrc}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover rounded-none"
+                  /> */}
+                  <Image
+                    src={card.imageSrc}
+                    alt='mold image'
+                    fill
+                    className="w-full h-full object-cover rounded-none"
+                  />
+                  {/* Decorative Color Stripe on top edge of frame */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 ${card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
+                    }`} />
+                </div>
+
+                {/* Information Content Area */}
+                <div className="p-4 space-y-3 text-left">
+                  {/* Badge Component */}
+                  <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none transition-colors duration-300 ${card.isLightVariant
+                    ? 'border-[#1B79EE] text-[#1B79EE] group-hover:border-white group-hover:text-white'
+                    : 'border-[#004aad] text-[#004aad] group-hover:border-white group-hover:text-white'
+                    }`}>
+                    {card.badge}
+                  </div>
+
+                  {/* Title Header */}
+                  <h3 className={`text-base font-black tracking-tight leading-tight uppercase rounded-none transition-colors duration-300 ${card.isLightVariant ? 'text-[#004aad] group-hover:text-white' : 'text-[#004aad] group-hover:text-white'
+                    }`}>
+                    {card.title}
+                  </h3>
+
+                  {/* Description Paragraph */}
+                  <p className={`text-xs font-light leading-relaxed rounded-none transition-colors duration-300 ${card.isLightVariant ? 'text-slate-700 group-hover:text-white/90' : 'text-slate-700 group-hover:text-white/90'
+                    }`}>
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Interactive Layer */}
+              <div className="p-4 bg-slate-50 border-t border-slate-100 rounded-none transition-colors duration-300 group-hover:bg-transparent group-hover:border-white/10">
+                <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${card.isLightVariant
+                  ? 'bg-[#1B79EE] group-hover:bg-white group-hover:text-[#1B79EE]'
+                  : 'bg-[#004aad] group-hover:bg-white group-hover:text-[#004aad]'
+                  }`}>
+                  {card.ctaText}
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+            </div>
+          ))}
         </div>
         <div className="flex flex-wrap mb-16 justify-evenly items-start gap-8 perspective-1000">
           {cards.map((card) => {
@@ -231,80 +294,18 @@ export default function CrossroadsHub() {
             )
           })}
         </div>
-        {/* Standardized 290px Card Grid Array */}
-        <div className="flex flex-row flex-nowrap justify-start items-start gap-6 overflow-x-auto w-full pb-8 pt-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:bg-[#004aad] [&::-webkit-scrollbar-thumb]:hover:bg-[#1B79EE] [scrollbar-width:thin] [scrollbar-color:#004aad_#f1f5f9]">
-          {operations.map((card) => (
-            /* Card Bounds: Exactly 290px x 580px, completely flat corners (0px) */
-            <div
-              key={card.id}
-              className={`w-[290px] h-[580px] flex-shrink-0 rounded-none border-2 flex flex-col justify-between overflow-hidden transition-all duration-300 group ${card.isLightVariant
-                ? 'bg-white border-[#1B79EE]/40 hover:bg-[#1B79EE] hover:border-[#1B79EE]'
-                : 'bg-white border-[#004aad] hover:bg-[#004aad] hover:border-[#004aad]'
-                }`}
-            >
-
-              {/* Top Block */}
-              <div>
-                {/* Native HTML5 High-Performance Video Player: Exactly 286px x 256px */}
-                <div className="relative w-[286px] h-[256px] mx-auto bg-black overflow-hidden rounded-none mt-[2px]">
-                  {/* <video
-                    src={card.imageSrc}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover rounded-none"
-                  /> */}
-                  <Image
-                    src={card.imageSrc}
-                    alt='mold image'
-                    fill
-                    className="w-full h-full object-cover rounded-none"
-                  />
-                  {/* Decorative Color Stripe on top edge of frame */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${card.isLightVariant ? 'bg-[#1B79EE]' : 'bg-[#004aad]'
-                    }`} />
-                </div>
-
-                {/* Information Content Area */}
-                <div className="p-4 space-y-3 text-left">
-                  {/* Badge Component */}
-                  <div className={`text-[9px] font-black tracking-widest uppercase border px-2 py-0.5 inline-block rounded-none transition-colors duration-300 ${card.isLightVariant
-                    ? 'border-[#1B79EE] text-[#1B79EE] group-hover:border-white group-hover:text-white'
-                    : 'border-[#004aad] text-[#004aad] group-hover:border-white group-hover:text-white'
-                    }`}>
-                    {card.badge}
-                  </div>
-
-                  {/* Title Header */}
-                  <h3 className={`text-base font-black tracking-tight leading-tight uppercase rounded-none transition-colors duration-300 ${card.isLightVariant ? 'text-[#004aad] group-hover:text-white' : 'text-[#004aad] group-hover:text-white'
-                    }`}>
-                    {card.title}
-                  </h3>
-
-                  {/* Description Paragraph */}
-                  <p className={`text-xs font-light leading-relaxed rounded-none transition-colors duration-300 ${card.isLightVariant ? 'text-slate-700 group-hover:text-white/90' : 'text-slate-700 group-hover:text-white/90'
-                    }`}>
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Action Interactive Layer */}
-              <div className="p-4 bg-slate-50 border-t border-slate-100 rounded-none transition-colors duration-300 group-hover:bg-transparent group-hover:border-white/10">
-                <button className={`w-full text-white text-[10px] font-black uppercase tracking-widest py-4 px-4 flex items-center justify-center gap-2 transition-colors rounded-none ${card.isLightVariant
-                  ? 'bg-[#1B79EE] group-hover:bg-white group-hover:text-[#1B79EE]'
-                  : 'bg-[#004aad] group-hover:bg-white group-hover:text-[#004aad]'
-                  }`}>
-                  {card.ctaText}
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-            </div>
-          ))}
+        {/* Header Text Block */}
+        <div className="text-center mb-2">
+          <div className="inline-flex items-center gap-2 bg-[#004aad]/10 border border-[#1B79EE]/30 px-4 py-1.5 text-xs font-mono font-black text-[#1B79EE] uppercase tracking-widest mb-4 rounded-none">
+            Industrial Trading Architecture
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#004aad] uppercase rounded-none">
+            The Crossroads of Everything <span className="text-[#1B79EE]">Precast</span>
+          </h2>
+          <p className="text-[#1B79EE] mt-4 max-w-2xl mx-auto text-sm md:text-base font-light rounded-none">
+            Every pipeline converging in one environment. Hover or select an operational target path to interact with the global ledger ecosystem.
+          </p>
         </div>
-
       </div>
     </section>
   )
