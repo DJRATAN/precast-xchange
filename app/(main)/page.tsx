@@ -6,6 +6,7 @@ import LeftVideoAds from "../components/LeftVideoAds";
 import RightVideoAds from "../components/RightVideoAds";
 import HeroSection from "../components/HeroSection";
 import PrecastSuppliesGrid from "./PrecastSuppliesGrid";
+import CategoryPlayground from "./CategoryPlayground";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -123,12 +124,31 @@ export default function Home() {
           <HeroSection />
           <PrecastEquipmentGrid />
           <PrecastMolds />
+          <CategoryPlayground
+            categoryTitle="Precast Mold"
+          />
           <PrecastCement />
+          <CategoryPlayground
+            categoryTitle="Precast Cement"
+          />
           <PrecastEngineering />
           <PrecastSuppliers />
           <PrecastFoundries />
           <MarketActionHub />
           <PrecastSuppliesGrid />
+          <CategoryPlayground
+            categoryTitle="Precast Supplies"
+            systemIndexCode="PS-4000"
+            nodes={[
+              { id: '1', title: 'Concrete Forming Systems', subText: 'Universal Steel-Polycarbonate Panel Molds (Flat & Reversible)', videoUrl: '/video/form-steel-poly.mp4' },
+              { id: '2', title: 'Magnetic Systems', subText: 'On-Form Magnetic Weld-On Inserts', videoUrl: '/video/magnetic-system.mp4' },
+              { id: '3', title: 'Chamfers & Accessories', subText: 'Reusable Chamfer Strips & Edge Forms', videoUrl: '/video/chamfers-edge.mp4' },
+              { id: '4', title: 'Release Agents', subText: 'Non-Toxic, High-Performance Form Release Agents', videoUrl: '/video/release-agents.mp4' },
+              { id: '5', title: 'Curing Compounds', subText: 'Water-Based Curing Agents for Concrete Strength', videoUrl: '/video/curing-compounds.mp4' },
+              { id: '6', title: 'Sealers & Protectants', subText: 'Architectural Concrete Surface Sealers', videoUrl: '/video/sealers.mp4' }
+            ]}
+          />
+
           <TaglineHeros {...customTaglines[0]} />
           <RegionalPrecastersGrid />
           <OpenMindSection />
