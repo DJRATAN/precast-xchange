@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 const words = [
     "BARTER",
@@ -20,8 +21,10 @@ export default function Hero() {
     const [index, setIndex] = useState(0)
     const [subIndex, setSubIndex] = useState(0)
     const [reverse, setReverse] = useState(false)
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+    const [isVideoReady, setIsVideoReady] = useState(false)
+    const videoRef = useRef<HTMLVideoElement>(null)
 
+    // Typewriter effect
     useEffect(() => {
         if (subIndex === words[index].length + 1 && !reverse) {
             const timeout = setTimeout(() => setReverse(true), 1500)
@@ -38,51 +41,69 @@ export default function Hero() {
         return () => clearTimeout(timeout)
     }, [subIndex, index, reverse])
 
-    // Defined targets mapping out your ecosystem nodes
-const quickLinks = [
-    { label: "Appraisals Valuation Matrix", href: "#appraisals", marker: "LN-01" },
-    { label: "Blueprints Partner Marquee", href: "#partners", marker: "LN-02" },
-    { label: "Castings Production Ledger", href: "#castings", marker: "LN-03" },
-    { label: "Directory Facility Nodes", href: "#directory", marker: "LN-04" },
-    { label: "Events Schedule Grid", href: "#events", marker: "LN-05" },
-    { label: "Exchange Terminal System", href: "#terminal", marker: "LN-06" },
-    { label: "Forms Moulds Manifest", href: "#forms-molds", marker: "LN-07" },
-    { label: "Golf Tournaments Hub", href: "#golf", marker: "LN-08" },
-    { label: "Hardware Component Registry", href: "#hardware", marker: "LN-09" },
-    { label: "Innovation Software Arrays", href: "#innovation", marker: "LN-10" },
-    { label: "Join Network Protocol", href: "#join-network", marker: "LN-11" },
-    { label: "Knowledge Resource Base", href: "#knowledge", marker: "LN-12" },
-    { label: "Logistics Router Engine", href: "#logistics", marker: "LN-13" },
-    { label: "Market Hub Input", href: "#market-hub", marker: "LN-14" },
-    { label: "Network Topology Status", href: "#network-topology", marker: "LN-15" },
-    { label: "Open Mind Forum", href: "#open-mind", marker: "LN-16" },
-    { label: "Pumps System Matrix", href: "#pumps", marker: "LN-17" },
-    { label: "Pipe Network Router", href: "#pipe", marker: "LN-18" },
-    { label: "Playground Video Stream", href: "#playground", marker: "LN-19" },
-    { label: "Quality Control Audits", href: "#quality", marker: "LN-20" },
-    { label: "Regional Ready Mix Grid", href: "#ready-mix", marker: "LN-21" },
-    { label: "Supplies & Accessories", href: "#supplies", marker: "LN-22" },
-    { label: "Talent & Workforce", href: "#talent", marker: "LN-23" },
-    { label: "Unlisted Request Ledger", href: "#unlisted-rfqs", marker: "LN-24" },
-    { label: "Valves Flow Index", href: "#valves", marker: "LN-25" },
-    { label: "Zone Operations Center", href: "#portal-boot", marker: "LN-26" }
-];
+    // Start playing hero video as soon as possible
+    useEffect(() => {
+        const video = videoRef.current
+        if (!video) return
+        video.play().catch(() => {})
+    }, [])
+
+    const quickLinks = [
+        { label: "Appraisals Valuation Matrix", href: "#appraisals", marker: "LN-01" },
+        { label: "Blueprints Partner Marquee", href: "#partners", marker: "LN-02" },
+        { label: "Castings Production Ledger", href: "#castings", marker: "LN-03" },
+        { label: "Directory Facility Nodes", href: "#directory", marker: "LN-04" },
+        { label: "Events Schedule Grid", href: "#events", marker: "LN-05" },
+        { label: "Exchange Terminal System", href: "#terminal", marker: "LN-06" },
+        { label: "Forms Moulds Manifest", href: "#forms-molds", marker: "LN-07" },
+        { label: "Golf Tournaments Hub", href: "#golf", marker: "LN-08" },
+        { label: "Hardware Component Registry", href: "#hardware", marker: "LN-09" },
+        { label: "Innovation Software Arrays", href: "#innovation", marker: "LN-10" },
+        { label: "Join Network Protocol", href: "#join-network", marker: "LN-11" },
+        { label: "Knowledge Resource Base", href: "#knowledge", marker: "LN-12" },
+        { label: "Logistics Router Engine", href: "#logistics", marker: "LN-13" },
+        { label: "Market Hub Input", href: "#market-hub", marker: "LN-14" },
+        { label: "Network Topology Status", href: "#network-topology", marker: "LN-15" },
+        { label: "Open Mind Forum", href: "#open-mind", marker: "LN-16" },
+        { label: "Pumps System Matrix", href: "#pumps", marker: "LN-17" },
+        { label: "Pipe Network Router", href: "#pipe", marker: "LN-18" },
+        { label: "Playground Video Stream", href: "#playground", marker: "LN-19" },
+        { label: "Quality Control Audits", href: "#quality", marker: "LN-20" },
+        { label: "Regional Ready Mix Grid", href: "#ready-mix", marker: "LN-21" },
+        { label: "Supplies & Accessories", href: "#supplies", marker: "LN-22" },
+        { label: "Talent & Workforce", href: "#talent", marker: "LN-23" },
+        { label: "Unlisted Request Ledger", href: "#unlisted-rfqs", marker: "LN-24" },
+        { label: "Valves Flow Index", href: "#valves", marker: "LN-25" },
+        { label: "Zone Operations Center", href: "#portal-boot", marker: "LN-26" }
+    ];
 
     return (
         <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-start bg-white rounded-none border-b-4 border-[#004aad]">
 
-            {/* Optimized Background Video Layer */}
-            <div className="absolute inset-0 z-0 rounded-none bg-white">
+            {/* ── LAYER 0: Poster / preload image — shows instantly, zero wait ── */}
+            <div
+                className={`absolute inset-0 z-0 transition-opacity duration-700 ${isVideoReady ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+            >
+                <Image
+                    src="/video-placeholder-frame.png"
+                    alt="Precast Exchange hero background"
+                    fill
+                    priority               // loads in <head> — no layout shift
+                    className="object-cover mix-blend-multiply opacity-80"
+                    sizes="100vw"
+                />
+            </div>
+
+            {/* ── LAYER 1: Video — fades IN over the poster once buffered ── */}
+            <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isVideoReady ? 'opacity-100' : 'opacity-0'}`}>
                 <video
-                    autoPlay
+                    ref={videoRef}
                     loop
                     muted
                     playsInline
                     preload="auto"
-                    poster="/video-placeholder-frame.png"
-                    onCanPlayThrough={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full object-cover transition-opacity duration-1000 mix-blend-multiply rounded-none ${isVideoLoaded ? 'opacity-[0.8]' : 'opacity-0'
-                        }`}
+                    onCanPlay={() => setIsVideoReady(true)}
+                    className="w-full h-full object-cover mix-blend-multiply rounded-none"
                 >
                     <source
                         src="/video/6266672_River Traffic Drone Snow_By_Dominick_Anskis_Artlist_HD.mp4"
@@ -91,7 +112,7 @@ const quickLinks = [
                 </video>
             </div>
 
-            {/* Background Industrial Grid Lines Overlay */}
+            {/* Blueprint Grid Overlay */}
             <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#1B79EE08_1px,transparent_1px),linear-gradient(to_bottom,#1B79EE08_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none rounded-none" />
 
             {/* TWO-COLUMN LAYOUT MATRIX CONTROLLER */}
@@ -142,7 +163,7 @@ const quickLinks = [
                     </div>
                 </div>
 
-                {/* RIGHT COLUMN: RECTANGULAR NAVIGATION LINK GRID (Bounded inside Hero Section) */}
+                {/* RIGHT COLUMN: NAVIGATION LINK GRID */}
                 <div className="lg:col-span-4 w-full flex flex-wrap lg:flex-col justify-start px-12 lg:items-end gap-1 z-30 rounded-none">
                     {quickLinks.map((link) => (
                         <a
@@ -150,7 +171,6 @@ const quickLinks = [
                             href={link.href}
                             className="group flex items-center outline-none"
                         >
-                            {/* Pure text block: White background, Blue text. Flips layout colors dynamically on hover. */}
                             <span className="border-2 border-[#004aad] bg-white text-[#004aad] px-6 py-2 w-35 item-center text-xs font-black uppercase tracking-widest hover:bg-[#004aad] hover:text-white transition-colors rounded-none outline-none">
                                 {link.label.split(' ')[0]}
                             </span>

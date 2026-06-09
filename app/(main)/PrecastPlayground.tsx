@@ -71,6 +71,7 @@ export default function PrecastPlayground() {
               loop
               muted
               playsInline
+              preload="none"
               className="absolute inset-0 w-full h-full object-cover z-0 rounded-none mix-blend-multiply opacity-90"
               src={activeNode.videoSrc}
             />
