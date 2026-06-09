@@ -28,6 +28,8 @@ import PrecastFoundries from "../components/PrecastFoundries";
 import PrecastEngineering from "../components/PrecastEngineering";
 import PrecastSuppliers from "../components/PrecastSuppliers";
 import PrecastPlayground from "./PrecastPlayground";
+import PrecastIdeaHub from "./PrecastIdeaHub";
+import YourPrivateDesk from "./YourPrivateDesk";
 
 // Define the type locally here to resolve the error instantly
 interface TaglineProps {
@@ -135,6 +137,8 @@ export default function Home() {
           <RegionalPrecastersGrid />
           <OpenMindSection />
           <PrecastExchangeTerminal />
+          <PrecastIdeaHub/>
+          <YourPrivateDesk/>
           <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
           <FourColumnMarquee />
