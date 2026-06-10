@@ -10,7 +10,21 @@ const SOCIAL_CHANNELS = [
     { id: 'TIKTOK', icon: <Share2 className="w-5 h-5" />, label: 'TikTok Live', color: '#1B79EE' },
     { id: 'YOUTUBE', icon: <FaYoutube className="w-5 h-5" />, label: 'YouTube Shorts', color: '#004aad' },
 ];
-
+//  const channels = [
+//         { icon: <Instagram />, name: 'Instagram', color: 'hover:text-[#E1306C]' },
+//         { icon: <Share2 />, name: 'TikTok', color: 'hover:text-[#000000]' },
+//         { icon: <Youtube />, name: 'YouTube', color: 'hover:text-[#FF0000]' },
+//         { icon: <Linkedin />, name: 'LinkedIn', color: 'hover:text-[#0077B5]' },
+//         { icon: <MessageCircle />, name: 'WhatsApp', color: 'hover:text-[#25D366]' },
+//         { icon: <Facebook />, name: 'Facebook', color: 'hover:text-[#1877F2]' },
+//     ];
+        // <div className="flex justify-center gap-6 py-8 bg-white border-t border-slate-200">
+        //     {channels.map((ch) => (
+        //         <a key={ch.name} href="#" className={`text-[#004aad] transition-all duration-300 ${ch.color} transform hover:scale-125`}>
+        //             {React.cloneElement(ch.icon as React.ReactElement, { size: 32 })}
+        //         </a>
+        //     ))}
+        // </div>
 export default function PrecastCentralFooter() {
     const [activeChannel, setActiveChannel] = useState('INSTA');
 
