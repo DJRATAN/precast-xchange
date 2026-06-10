@@ -112,6 +112,152 @@ export default function Home() {
       lineTwoHighlightColor: "white"
     }
   ]
+  const nodes = [
+    {
+      id: "M-01",
+      vendorName: "Steel Box Culvert Precision Mold",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    },
+    {
+      id: "M-02",
+      vendorName: "Self-Stressing Prestressed Girder Form",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    },
+    {
+      id: "M-03",
+      vendorName: "Modular Retaining Wall Matrix Block",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: true
+    },
+    {
+      id: "M-04",
+      vendorName: "Magnetic Shuttering Side Profile Edge",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    },
+    {
+      id: "M-05",
+      vendorName: "Battery Mold Vertical Wall Panel System",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    },
+    {
+      id: "M-06",
+      vendorName: "Architectural Textured Polyurethane Formliner",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-07",
+      vendorName: "Tapered Utility Vault Core Assembly",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-08",
+      vendorName: "Automated Hydraulic Tilting Table Rail",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: true
+    },
+    {
+      id: "M-09",
+      vendorName: "Prestressed Hollowcore Slab Extruder Bed",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-10",
+      vendorName: "Heavy Duty Segmented Tunnel Lining Mold",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-11",
+      vendorName: "Manhole Base Invert Monolithic Cast Form",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    },
+    {
+      id: "M-12",
+      vendorName: "Double-Tee Roof Beam Steel Mold Liner",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: true
+    },
+    {
+      id: "M-13",
+      vendorName: "Mechanized Column Casting Form Matrix",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-14",
+      vendorName: "Catch Basin Steel Mold Shuttering Strip",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-15",
+      vendorName: "Precast Staircase Adjustable Cassette Mold",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: true
+    },
+    {
+      id: "M-16",
+      vendorName: "Spun Concrete Pole High-Velocity Form",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    },
+    {
+      id: "M-17",
+      vendorName: "Three-Part Modular Septic Tank Steel Mold",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/assets/mold form/catch-01 (4).JPG",
+      mediaType: "IMAGE" as const,
+      isViewed: false
+    },
+    {
+      id: "M-18",
+      vendorName: "High-Volume Highway Barrier Slipform Frame",
+      vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
+      mediaUrl: "/video/mega mold 30-48 red.mp4",
+      mediaType: "VIDEO" as const,
+      isViewed: false
+    }
+  ]
 
   return (
     <div className="w-full bg-[#f8f9fa] min-h-screen font-sans">
@@ -128,171 +274,44 @@ export default function Home() {
           <PrecastEquipmentGrid />
           {/* <FactoryStories /> */}
           <CategoryStoriesHub
-            title="Precast Mold"
-            nodes={[
-              {
-                id: "M-01",
-                vendorName: "Steel Box Culvert Precision Mold",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              },
-              {
-                id: "M-02",
-                vendorName: "Self-Stressing Prestressed Girder Form",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              },
-              {
-                id: "M-03",
-                vendorName: "Modular Retaining Wall Matrix Block",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: true
-              },
-              {
-                id: "M-04",
-                vendorName: "Magnetic Shuttering Side Profile Edge",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              },
-              {
-                id: "M-05",
-                vendorName: "Battery Mold Vertical Wall Panel System",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              },
-              {
-                id: "M-06",
-                vendorName: "Architectural Textured Polyurethane Formliner",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-07",
-                vendorName: "Tapered Utility Vault Core Assembly",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-08",
-                vendorName: "Automated Hydraulic Tilting Table Rail",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: true
-              },
-              {
-                id: "M-09",
-                vendorName: "Prestressed Hollowcore Slab Extruder Bed",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-10",
-                vendorName: "Heavy Duty Segmented Tunnel Lining Mold",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-11",
-                vendorName: "Manhole Base Invert Monolithic Cast Form",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              },
-              {
-                id: "M-12",
-                vendorName: "Double-Tee Roof Beam Steel Mold Liner",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: true
-              },
-              {
-                id: "M-13",
-                vendorName: "Mechanized Column Casting Form Matrix",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-14",
-                vendorName: "Catch Basin Steel Mold Shuttering Strip",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-15",
-                vendorName: "Precast Staircase Adjustable Cassette Mold",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: true
-              },
-              {
-                id: "M-16",
-                vendorName: "Spun Concrete Pole High-Velocity Form",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              },
-              {
-                id: "M-17",
-                vendorName: "Three-Part Modular Septic Tank Steel Mold",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/assets/mold form/catch-01 (4).JPG",
-                mediaType: "IMAGE" as const,
-                isViewed: false
-              },
-              {
-                id: "M-18",
-                vendorName: "High-Volume Highway Barrier Slipform Frame",
-                vendorAvatar: "/assets/mold form/catch-01 (3).JPG",
-                mediaUrl: "/video/mega mold 30-48 red.mp4",
-                mediaType: "VIDEO" as const,
-                isViewed: false
-              }
-            ]}
+            title="Precast Equipment & Machinery"
+            nodes={nodes}
           />
           {/* <MoldFormStories /> */}
           <CategoryPlayground
             categoryTitle="Precast Equipment & Machinery"
           />
           <PrecastMolds />
+          <CategoryStoriesHub
+            title="Precast Mold"
+            nodes={nodes}
+          />
           <CategoryPlayground
             categoryTitle="Precast Mold"
           />
           <PrecastCement />
+          <CategoryStoriesHub
+            title="Precast Cement"
+            nodes={nodes}
+          />
           <CategoryPlayground
             categoryTitle="Precast Cement"
           />
           <PrecastEngineering />
+          <CategoryStoriesHub
+            title="Precast Engineering"
+            nodes={nodes}
+          />
           <PrecastSuppliers />
-
+          <CategoryStoriesHub
+            title="Precast Suppliers"
+            nodes={nodes}
+          />
           <PrecastFoundries />
-
+          <CategoryStoriesHub
+            title="Precast Foundries & Forgings"
+            nodes={nodes}
+          />
           <MarketActionHub />
           <PrecastSuppliesGrid />
           <CategoryPlayground
