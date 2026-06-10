@@ -42,11 +42,11 @@ export default function EntrySystem() {
             <AnimatePresence>
                 {!isInitialized && (
                     <motion.div
-                        exit={{ 
-                            opacity: 0, 
-                            scale: 1.1, 
+                        exit={{
+                            opacity: 0,
+                            scale: 1.1,
                             filter: "blur(20px)",
-                            transition: { duration: 0.8, ease: "circOut" } 
+                            transition: { duration: 0.8, ease: "circOut" }
                         }}
                         className="fixed inset-0 z-[9999] bg-white flex items-center justify-center p-4 md:p-6 overflow-hidden rounded-none"
                     >
@@ -61,16 +61,16 @@ export default function EntrySystem() {
                         >
                             {/* TOP SECTION: VISUAL RUNWAY (100% Full Opacity Viewport) */}
                             <div className="relative w-full h-48 md:h-64 overflow-hidden border-b-2 border-[#1B79EE]/30 bg-black rounded-none">
-                                <video 
-                                    autoPlay 
-                                    loop 
-                                    muted 
+                                <video
+                                    autoPlay
+                                    loop
+                                    muted
                                     playsInline
                                     className="absolute inset-0 w-full h-full object-cover opacity-100 z-0 rounded-none"
                                 >
                                     <source src="/video/6584801_Aerial Cityscape Architectural Landmark South Korea Songdo_By_Yeonmedia_Artlist_HD.mp4" type="video/mp4" />
-                                </video> 
-                                
+                                </video>
+
                                 {/* Overlay Identity Token Plate */}
                                 <div className="absolute bottom-4 left-6 z-10 bg-[#004aad]/90 p-4 border border-white/10 rounded-none max-w-[calc(100%-3rem)]">
                                     <div className="flex items-center gap-2 mb-1 rounded-none">
@@ -85,14 +85,14 @@ export default function EntrySystem() {
 
                             {/* SITE IN PROGRESS TICKER LOGIC STRIP */}
                             <div className="w-full bg-[#1B79EE] text-white px-6 py-2.5 flex items-center gap-3 border-b-2 border-[#004aad]/20 rounded-none font-mono">
-                                 <span className="text-[10px] font-black uppercase tracking-[0.25em]">
+                                <span className="text-[10px] font-black uppercase tracking-[0.25em]">
                                     Site In Progress
                                 </span>
                             </div>
 
                             {/* BOTTOM SECTION: WELCOME & TELEMETRY */}
                             <div className="p-8 md:p-12 space-y-8 bg-[#004aad] rounded-none">
-                                
+
                                 {/* WELCOME MESSAGE BLOCK */}
                                 <div className="space-y-4 rounded-none">
                                     <div className="flex items-center gap-3 rounded-none">
@@ -102,9 +102,9 @@ export default function EntrySystem() {
                                     <div className="space-y-3 rounded-none">
                                         <h2 className="text-white text-xl font-bold uppercase tracking-tight rounded-none">Dear Patron,</h2>
                                         <p className="text-white/70 text-sm leading-relaxed font-medium max-w-prose rounded-none">
-                                            We are delighted that you have taken an opportunity to engage about the 
-                                            <span className="text-white font-bold"> marvels of Precast Concrete</span>. 
-                                            Find powerful resources at the snap of your fingers at 
+                                            We are delighted that you have taken an opportunity to engage about the
+                                            <span className="text-white font-bold"> marvels of Precast Concrete</span>.
+                                            Find powerful resources at the snap of your fingers at
                                             <span className="text-[#1B79EE] font-bold"> lightning speed</span>.
                                         </p>
                                     </div>
@@ -123,7 +123,7 @@ export default function EntrySystem() {
 
                                 {/* PROGRESS SYSTEM */}
                                 <div className="h-[2px] w-full bg-white/5 relative rounded-none">
-                                    <motion.div 
+                                    <motion.div
                                         className="absolute top-0 left-0 h-full bg-[#1B79EE] rounded-none"
                                         initial={{ width: 0 }}
                                         animate={{ width: `${progress}%` }}
@@ -158,19 +158,23 @@ export default function EntrySystem() {
                 )}
             </AnimatePresence>
 
-            {/* FLOATING AUDIO CONTROLLER */}
-            {/* <motion.div
+            {/* FIXED FLOATING AUDIO NODE WITH FULL TRI-BLUE BLOOM */}
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={isInitialized ? { opacity: 1 } : {}}
-                className="fixed top-4 right-4 z-[100] rounded-none"
+                className="fixed bottom-92 right-10 z-[100]"
             >
                 <button
                     onClick={toggleMute}
-                    className="p-3 bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-[#1B79EE] transition-all rounded-none outline-none"
+                    className="group relative w-12 h-12 flex items-center justify-center bg-white border-2 border-[#004aad] text-[#004aad] transition-all duration-300 ease-out outline-none rounded-full cursor-pointer"
                 >
-                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                    {/* Dynamic High-Contrast Icon Layer */}
+                    <span className="relative z-10 transition-transform duration-200 group-hover:scale-110">
+                        {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                    </span>
                 </button>
-            </motion.div> */}
+            </motion.div>
+
         </>
     );
 }
