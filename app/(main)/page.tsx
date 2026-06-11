@@ -13,6 +13,7 @@ import CategoryStoriesHub from "./CategoryStoriesHub";
 import PrecastCentralFooter from "./PrecastCentralFooter";
 import ContactHub from "./ContactHub";
 import EventsShowcaseMatrix from "./EventsShowcaseMatrix";
+import PrecastWorkforceHub from "./PrecastWorkforceHub";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -337,6 +338,7 @@ export default function Home() {
           <PrecastIdeaHub />
           <YourPrivateDesk />
           <EventsShowcaseMatrix />
+          <PrecastWorkforceHub/>
           <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
           <FourColumnMarquee />
