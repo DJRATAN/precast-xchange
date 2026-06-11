@@ -12,6 +12,7 @@ import MoldFormStories from "./MoldFormStories";
 import CategoryStoriesHub from "./CategoryStoriesHub";
 import PrecastCentralFooter from "./PrecastCentralFooter";
 import ContactHub from "./ContactHub";
+import EventsShowcaseMatrix from "./EventsShowcaseMatrix";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -335,6 +336,7 @@ export default function Home() {
           <PrecastExchangeTerminal />
           <PrecastIdeaHub />
           <YourPrivateDesk />
+          <EventsShowcaseMatrix />
           <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
           <FourColumnMarquee />
@@ -347,7 +349,7 @@ export default function Home() {
           <FormsAndMoldsGrid />
           <EquipmentCatalog />
           <PrecastCentralFooter />
-          <ContactHub/>
+          <ContactHub />
         </main>
 
         {/* RIGHT SKYSCRAPER AD */}
