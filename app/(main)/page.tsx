@@ -11,6 +11,7 @@ import FactoryStories from "./FactoryStories";
 import MoldFormStories from "./MoldFormStories";
 import CategoryStoriesHub from "./CategoryStoriesHub";
 import PrecastCentralFooter from "./PrecastCentralFooter";
+import ContactHub from "./ContactHub";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -346,6 +347,7 @@ export default function Home() {
           <FormsAndMoldsGrid />
           <EquipmentCatalog />
           <PrecastCentralFooter />
+          <ContactHub/>
         </main>
 
         {/* RIGHT SKYSCRAPER AD */}
