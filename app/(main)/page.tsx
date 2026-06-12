@@ -15,6 +15,7 @@ import ContactHub from "./ContactHub";
 import EventsShowcaseMatrix from "./EventsShowcaseMatrix";
 import PrecastWorkforceHub from "./PrecastWorkforceHub";
 import PrecastNewsTTW from "./PrecastNewsTTW";
+import TalentExchangeDeck from "./TalentExchangeDeck";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -340,13 +341,14 @@ export default function Home() {
           <YourPrivateDesk />
           <EventsShowcaseMatrix />
           <PrecastWorkforceHub />
+          <PrecastNewsTTW />
+          <TalentExchangeDeck/>
           <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
           <FourColumnMarquee />
           <PrecastCasting />
           <TaglineHero />
           <WhyPrecastExchange />
-          <PrecastNewsTTW />
           <TaglineHeros {...customTaglines[3]} />
           <RegionalReadyMixGrid />
           <AvenuesSection />
