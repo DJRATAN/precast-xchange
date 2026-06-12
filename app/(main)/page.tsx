@@ -14,6 +14,7 @@ import PrecastCentralFooter from "./PrecastCentralFooter";
 import ContactHub from "./ContactHub";
 import EventsShowcaseMatrix from "./EventsShowcaseMatrix";
 import PrecastWorkforceHub from "./PrecastWorkforceHub";
+import PrecastNewsTTW from "./PrecastNewsTTW";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -338,13 +339,14 @@ export default function Home() {
           <PrecastIdeaHub />
           <YourPrivateDesk />
           <EventsShowcaseMatrix />
-          <PrecastWorkforceHub/>
+          <PrecastWorkforceHub />
           <TaglineHeros {...customTaglines[1]} />
           <CrossroadsFlippingHub />
           <FourColumnMarquee />
           <PrecastCasting />
           <TaglineHero />
           <WhyPrecastExchange />
+          <PrecastNewsTTW />
           <TaglineHeros {...customTaglines[3]} />
           <RegionalReadyMixGrid />
           <AvenuesSection />
