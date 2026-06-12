@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import EntrySystem from "./(main)/EntrySystem";
 import FloatingTelemetryHub from "./(main)/FloatingTelemetryHub";
+import { ScrollProgressAnimation } from "@/components/ui/ScrollProgressAnimation";
 
 // Single font — removed Geist + Geist_Mono (3 font families was blocking render)
 const inter = Inter({
@@ -30,8 +31,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <EntrySystem />
         <FloatingTelemetryHub />
+        <ScrollProgressAnimation />
         {children}
-      </body>
+      </body> 
     </html>
   );
 }
