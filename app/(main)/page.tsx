@@ -17,6 +17,7 @@ import PrecastWorkforceHub from "./PrecastWorkforceHub";
 import PrecastNewsTTW from "./PrecastNewsTTW";
 import TalentExchangeDeck from "./TalentExchangeDeck";
 import CompactTalentRegistry from "./CompactTalentRegistry";
+import PrecastBlogWire from "./PrecastBlogWire";
 
 // ── Below-the-fold: lazy-loaded only when needed ─────────────────────────────
 const PrecastEquipmentGrid = dynamic(() => import("../components/PrecastEquipmentGrid"));
@@ -333,7 +334,7 @@ export default function Home() {
               { id: '6', title: 'Sealers & Protectants', subText: 'Architectural Concrete Surface Sealers', videoUrl: '/video/sealers.mp4' }
             ]}
           />
-
+          <PrecastBlogWire />
           <TaglineHeros {...customTaglines[0]} />
           <RegionalPrecastersGrid />
           <OpenMindSection />
